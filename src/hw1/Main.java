@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         //Задание №1
         int length = 5, width = 10, height = 5;
-        System.out.println("Площадь равна " + length * width * height);
+        int s = length * height * width;
+        System.out.println("Площадь равна " + s);
         //Задание №2
         int number = 9;
         System.out.println("Куб числа " + number + " равен " + number * number * number);
