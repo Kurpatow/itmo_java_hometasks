@@ -13,5 +13,16 @@ public class Main {
         double distance = 600;
         double mc = (distance / time) / 3.6;
         System.out.println("Итого метров секунду " + mc);
+        //Задание №4
+        //под задание №1
+        int h = 45;
+        int j = h % 10;
+        int k = h / 10;
+        System.out.println("Сумма цифр для числа " + h + " равна " + (j + k));
+        //под задание №2
+        int u = 11;
+        int i = u % 10;
+        int o = u / 10;
+        System.out.println("Сумма цифр для числа " + u + " равна " + (i + o));
     }
 }
