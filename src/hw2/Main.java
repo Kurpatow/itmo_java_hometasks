@@ -49,6 +49,15 @@ public class Main {
             System.out.println("Попробуй в другой раз ");
         }
 
+        //Задание №4
+        int a = (int) (Math.random () * 490 + 10);
+        if (a >= 25 && a <= 200) {
+            System.out.println (a + " - случайное число из отрезка ПОПАЛО в интервал");
+        }
+        else {
+            System.out.println (a + " - случайное число из отрезка НЕ ПОПАЛО в интервал");
+        }
+
         //Задание №5
         int age = 99;
         int exp = 5;
@@ -59,15 +68,6 @@ public class Main {
             System.out.println("Вы НЕ подходите на должность стажера");
         }else  if (exp >= 5){
             System.out.println("Вы подходите на должность стажера");
-        }
-
-        //Задание №4
-        int a = (int) (Math.random () * 490 + 10);
-        if (a >= 25 && a <= 200) {
-            System.out.println (a + " - случайное число из отрезка ПОПАЛО в интервал");
-        }
-        else {
-            System.out.println (a + " - случайное число из отрезка НЕ ПОПАЛО в интервал");
         }
     }
 }
