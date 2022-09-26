@@ -2,7 +2,7 @@ package hw2;
 
 public class Main {
     public static void main(String[] args) {
-        //Задача №1
+        //Задание №1
         int month = 13;
 
         if (month == 12 || month == 1 || month == 2) {
