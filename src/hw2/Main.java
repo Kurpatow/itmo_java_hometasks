@@ -35,5 +35,20 @@ public class Main {
             default:
                 System.out.println("Сумма без скидки " + sum);
         }
+
+        //Задание №3
+        int count = 44;
+
+        if (count <= 100 & count >= 90) {
+            System.out.println("Отлично");
+        }else if (count <= 89 & count >= 60) {
+            System.out.println("Хорошо");
+        }else if (count <= 59 & count >= 40) {
+            System.out.println("Удовлетворительно ");
+        }else if (count <= 39 & count >= 0)  {
+            System.out.println("Попробуй в другой раз ");
+        }
+
+
     }
 }
