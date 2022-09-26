@@ -60,5 +60,14 @@ public class Main {
         }else  if (exp >= 5){
             System.out.println("Вы подходите на должность стажера");
         }
+
+        //Задание №4
+        int a = (int) (Math.random () * 490 + 10);
+        if (a >= 25 && a <= 200) {
+            System.out.println (a + " - случайное число из отрезка ПОПАЛО в интервал");
+        }
+        else {
+            System.out.println (a + " - случайное число из отрезка НЕ ПОПАЛО в интервал");
+        }
     }
 }
