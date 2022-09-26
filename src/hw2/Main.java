@@ -37,7 +37,7 @@ public class Main {
         }
 
         //Задание №3
-        int count = 44;
+        int count = 101;
 
         if (count <= 100 & count >= 90) {
             System.out.println("Отлично");
@@ -47,7 +47,10 @@ public class Main {
             System.out.println("Удовлетворительно ");
         }else if (count <= 39 & count >= 0)  {
             System.out.println("Попробуй в другой раз ");
+        }else{
+            System.out.println("Неверно введены данные");
         }
+
 
         //Задание №4
         int a = (int) (Math.random () * 490 + 10);
@@ -68,6 +71,8 @@ public class Main {
             System.out.println("Вы НЕ подходите на должность стажера");
         }else  if (exp >= 5){
             System.out.println("Вы подходите на должность стажера");
+        }else{
+            System.out.println("Неверно введены данные");
         }
     }
 }
