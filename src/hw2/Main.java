@@ -18,6 +18,22 @@ public class Main {
         }
 
         //Задание №2
-
+        int saleCode = 43;
+        double sum = 10000;
+        switch (saleCode) {
+            case 4525:
+                System.out.println("Сумма с учётом скижки " + (sum * 0.7) + " руб.");
+                break;
+            case 6424:
+            case 7012:
+                System.out.println("Сумма с учётом скижки " + (sum * 0.8) + " руб.");
+                break;
+            case 7647:
+            case 9011:
+                System.out.println("Сумма с учётом скижки " + (sum * 0.9) + " руб.");
+                break;
+            default:
+                System.out.println("Сумма без скидки " + sum);
+        }
     }
 }
