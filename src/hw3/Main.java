@@ -14,7 +14,13 @@ public class Main {
             System.out.println(b);
         }
         //Задание №2
-
+        int z = 12;
+        int sum = 0;
+        while (z > 0){
+            sum += z % 10;
+            z = z / 10;
+        }
+        System.out.println(sum);
         //Задание №3
         //Задание №4 - в отдельном классе
     }
