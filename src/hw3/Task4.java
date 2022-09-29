@@ -12,6 +12,8 @@ public class Task4 {
             System.out.println("Загаданное число меньше. Я загадал " + ii);
         }else if (user < ii){
             System.out.println("Загаданное число больше. Я загадал " + ii);
+        }else if (user == 0){
+            System.out.println("Выход из программы");
         }
     }
 }
