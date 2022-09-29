@@ -1,7 +1,5 @@
 package hw3;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         //Задание №1
@@ -21,8 +19,8 @@ public class Main {
             z = z / 10;
         }
         System.out.println(sum);
-        //Задание №3
-        //Задание №4 - в отдельном классе
+        //Задание №3 - в отдельном классе Task3
+        //Задание №4 - в отдельном классе Task4
     }
 }
 
