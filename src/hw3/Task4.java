@@ -2,10 +2,12 @@ package hw3;
 
 public class Task4 {
     public static void main(String[] args) {
-        int user = 0;
+        double user = 5.5;
         int ii = (int) ((Math.random() * 9) + 1);
         if (user < 1 && user > 9) {
             System.out.println("Число выходит за диапазон");
+        }else if (user != ii){
+            System.out.println("Число должно быть целым");
         }else if (user == ii) {
             System.out.println("Вы угадали! Это число " + ii );
         }else if (user > ii) {
