@@ -1,5 +1,7 @@
 package hw5;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //Задание №1
@@ -36,6 +38,7 @@ public class Main {
             System.out.println(num[j]);
         }
         //Задание №3
+
         //Задание №4
         String text = "В предложении все слова разной длины";
         String[] wordsArray = text.split(" ");
@@ -48,6 +51,18 @@ public class Main {
             }
         }
         System.out.println(String.format("Дано - " + text + "\n" + "Самое длинное слово - %s (количество символов = %d)", longest, wordSize));
+
         //Задание №5
+        int[] numArray = {18, -36, -11, 0, 99, 335, -4, 54, -13, 71, -897, -76};
+        int negative = 0;
+        for (int element : numArray ) {
+            if (element < 0) negative++;
+        }
+        int[] allNegative = new int[negative];
+        negative = 0;
+        for (int element : numArray){
+            if (element < 0) allNegative[negative++] = element;
+        }
+        System.out.println("Отрицательные элименты из исходного массива - " + Arrays.toString(allNegative));
     }
 }
