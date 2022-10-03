@@ -37,6 +37,17 @@ public class Main {
         }
         //Задание №3
         //Задание №4
+        String text = "В предложении все слова разной длины";
+        String[] wordsArray = text.split(" ");
+        int wordSize = 0;
+        String longest = "";
+        for (String word: wordsArray) {
+            if (word.length() > wordSize) {
+                wordSize = word.length();
+                longest = word;
+            }
+        }
+        System.out.println(String.format("Дано - " + text + "\n" + "Самое длинное слово - %s (количество символов = %d)", longest, wordSize));
         //Задание №5
     }
 }
