@@ -6,15 +6,12 @@ public class Main {
     public static void main(String[] args) {
         //Задание №1
         int[] nam = new int[4];
-        for (int i = 0; i < nam.length; i++) {
-            nam[i] = (int) (Math.random() * 9);
-            System.out.println(nam[i]);
-        }
         int max = nam[0];
         int min = nam[0];
         int sArf = 0;
-        int i;
-        for (i = 0; i < nam.length; i++) {
+        for (int i = 0; i < nam.length; i++) {
+            nam[i] = (int) (Math.random() * 9);
+            System.out.println(nam[i]);
             if (max < nam[i]) {
                 max = nam[i];
             }
