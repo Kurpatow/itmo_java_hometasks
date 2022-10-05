@@ -8,7 +8,7 @@ public class Task4 {
         int ii = min + (int) (Math.random() * ++(dip));
         int user;
 
-        user = 10;
+        user = 8;
         while (true) {
             if (user == 0) {
                 System.out.println("Выход из программы");
