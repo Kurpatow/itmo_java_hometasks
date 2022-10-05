@@ -1,6 +1,7 @@
 package hw5;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,13 +34,41 @@ public class Main {
             System.out.println(num[j]);
         }
         //Задание №3
+        int N = 3;
+        String[] resultArr = new String[N];
+        Scanner userWd = new Scanner(System.in);
+        String wd;
+        int wdCount = 0;
+        boolean isRepeat;
+
+        while (true) {
+            wd = userWd.nextLine();
+            isRepeat = false;
+            if ("exit".equals(wd))
+                break;
+            for (String element: resultArr) {
+                if (element == null)
+                    continue;
+                if (wd.equals(element)){
+                    System.out.println("Введенное слово уже существует.");
+                    isRepeat = true;
+                    break;
+                }
+            }
+            if (!isRepeat) {
+                resultArr[wdCount] = wd;
+                wdCount++;
+            } else if (wdCount == N) break;
+        }
+        System.out.println("Итог:");
+        System.out.println(Arrays.asList(resultArr));
 
         //Задание №4
         String text = "В предложении все слова разной длины";
         String[] wordsArray = text.split(" ");
         int wordSize = 0;
         String longest = "";
-        for (String word: wordsArray) {
+        for (String word : wordsArray) {
             if (word.length() > wordSize) {
                 wordSize = word.length();
                 longest = word;
