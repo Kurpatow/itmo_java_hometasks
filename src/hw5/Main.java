@@ -6,21 +6,19 @@ public class Main {
     public static void main(String[] args) {
         //Задание №1
         int[] nam = new int[4];
-        int max = nam[0];
-        int min = nam[0];
-        int sArf = 0;
+        int max = 300;
+        int min = max;
+        double sArf = 0;
         for (int i = 0; i < nam.length; i++) {
-            nam[i] = (int) (Math.random() * 9);
+            nam[i] = (int) (Math.random() * max);
             System.out.println(nam[i]);
             if (max < nam[i]) {
                 max = nam[i];
             }
-            if (min > nam[i]){
-                min = nam[i];
+            if (min > nam[i]) {
+                 min = nam[i];
             }
-        }
-        for (int b : nam){
-            sArf += b;
+            sArf = sArf + nam[i];
         }
         System.out.println("Максимальное число " + max);
         System.out.println("Минимальное число " + min);
