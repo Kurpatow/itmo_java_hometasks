@@ -1,17 +1,19 @@
 package ru.itmo.homeworks.hw6.task3;
 
-import ru.itmo.homeworks.hw6.task3.enemies.Cat;
-import ru.itmo.homeworks.hw6.task3.enemies.Cat2;
-import ru.itmo.homeworks.hw6.task3.enemies.Mouse;
-
 public class Main {
     public static void main(String[] args) {
-        Cat cat1 = new Cat();
-        Cat2 cat2 = new Cat2();
-        Mouse mouse = new Mouse();
+        Mouse mouse1 = new Mouse(5);
+        Mouse mouse2 = new Mouse(4);
+        Mouse mouse3 = new Mouse(9);
 
-        cat1.showInfo();
-        cat2.showInfo();
+        Cat valera = new Cat("Валера", 6, 4);
+        Cat grigoriy = new Cat("Григорий", 10, 7);
+
+        grigoriy.catchingMouse(mouse1);
+        grigoriy.catchingMouse(mouse2);
+        grigoriy.catchingMouse(mouse3);
+
+        grigoriy.attackAnotherCat(valera);
 
     }
 }
