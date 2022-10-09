@@ -6,4 +6,11 @@ public class Animals {
     public int mouseSpeed;
     public int weight;
     public int catchMouses;
+
+    public void showInfo() {
+        System.out.println();
+    }
+
 }
+
+

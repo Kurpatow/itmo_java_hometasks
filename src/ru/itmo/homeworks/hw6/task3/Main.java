@@ -10,5 +10,8 @@ public class Main {
         Cat2 cat2 = new Cat2();
         Mouse mouse = new Mouse();
 
+        cat1.showInfo();
+        cat2.showInfo();
+
     }
 }
