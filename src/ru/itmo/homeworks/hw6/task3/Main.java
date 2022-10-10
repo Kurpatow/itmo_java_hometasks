@@ -7,7 +7,7 @@ public class Main {
         Mouse mouse3 = new Mouse(9);
 
         Cat valera = new Cat("Валера", 6, 4);
-        Cat grigoriy = new Cat("Григорий", 10, 7);
+        Cat grigoriy = new Cat("Григорий", 10, 8);
 
         grigoriy.catchingMouse(mouse1);
         grigoriy.catchingMouse(mouse2);
