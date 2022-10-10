@@ -70,4 +70,11 @@ public class Cat {
             cat.attackAnotherCat(this);
         }
     }
+    public void printMouses() {
+        int mCount = 0;
+        System.out.println("Мыши " + name + ":");
+        for(Mouse mouse: mouses) {
+            if (mouse != null) System.out.println("Мышь " + ++mCount);
+        }
+    }
 }
