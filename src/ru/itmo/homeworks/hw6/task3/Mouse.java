@@ -7,7 +7,7 @@ public class Mouse {
         setSpeed(speed);
     }
     private void setSpeed(int speed) {
-        if (speed < 0) throw new IllegalArgumentException("Скорость мыши не может быть меньше нуля");
+        if (speed < 0) throw new IllegalArgumentException("Скорость мыши не может быть меньше нуля!");
         this.speed = speed;
     }
     public int getSpeed() {
