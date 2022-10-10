@@ -3,7 +3,7 @@ package ru.itmo.homeworks.hw6.task3;
 public class Cat {
         private String name;
         private int speed, weight;
-        private Mouse[] mouses;
+        private Mouse1[] mouses;
 
         private int mouseCount = 0;
 
@@ -36,10 +36,10 @@ public class Cat {
         }
         private void initMouses() {
             if (mouseCount == 0) {
-                mouses = new Mouse[100];
+                mouses = new Mouse1[100];
             }
         }
-        public void catchingMouse(Mouse mouse) {
+        public void catchingMouse(Mouse1 mouse) {
             if (speed > mouse.getSpeed()) { //Скорость кота больше чему  мыши
                 if (mouseCount < mouses.length) {
                     System.out.println("Кот " + getName() + " съел мышь");
@@ -50,11 +50,11 @@ public class Cat {
                 }
             }
         }
-        public Mouse[] getMouses() {
+        public Mouse1[] getMouses() {
             return mouses;
         }
-        public Mouse[] lostMouses() {
-            Mouse[] lostMousesArray = mouses.clone();
+        public Mouse1[] lostMouses() {
+            Mouse1[] lostMousesArray = mouses.clone();
             mouseCount = 0;
             initMouses();
             return lostMousesArray;
@@ -62,8 +62,8 @@ public class Cat {
         public void attackAnotherCat(ru.itmo.homeworks.hw6.task3.Cat cat) {  //Аттакуем другого кота
             if(weight > cat.getWeight()) {
                 System.out.println(getName() + " отобрал у " + cat.getName() + " всех мышей");
-                Mouse[] anotherCatMouses = cat.lostMouses();
-                for(Mouse mouse: anotherCatMouses) {
+                Mouse1[] anotherCatMouses = cat.lostMouses();
+                for(Mouse1 mouse: anotherCatMouses) {
                     if (mouse != null) catchingMouse(mouse);
                 }
             } else if(cat.getWeight() > weight) {
@@ -73,7 +73,7 @@ public class Cat {
     public void printMouses() {
         int count = 0;
         System.out.println("Мыши кота " + name + ":");
-        for (Mouse mouse : mouses) {
+        for (Mouse1 mouse : mouses) {
             if (mouse != null) System.out.println("Мышь " + ++count);
         }
         if (count == 0) System.out.println("Мыши закончились");

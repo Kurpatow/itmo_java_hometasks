@@ -3,9 +3,9 @@ package ru.itmo.homeworks.hw6.task3;
 public class Main {
     public static void main(String[] args) {
 
-        Mouse mouse1 = new Mouse(6);
-        Mouse mouse2 = new Mouse(7);
-        Mouse mouse3 = new Mouse(9);
+        Mouse1 mouse1 = new Mouse1(6);
+        Mouse1 mouse2 = new Mouse1(7);
+        Mouse1 mouse3 = new Mouse1(9);
 
         Cat valera = new Cat ("Валера", 6, 4);
         Cat grigoriy = new Cat ("Григорий", 10, 8);
