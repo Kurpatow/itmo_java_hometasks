@@ -6,14 +6,13 @@ public class School {
     private int maxTeachers, maxStudents;
     private int numTeachers = 0, numStudents = 0;
     public Teacher[] teachers;
-    public Student[] students;
-    private Object student;
+    public Student[] student;
 
     public School(String name, int director, int maxStudents, int maxTeachers) {
         setDirector(director);
         setMaxStudents(maxStudents);
         setMaxTeachers(maxTeachers);
-        students = new Student[maxStudents];
+        student = new Student[maxStudents];
         teachers = new Teacher[maxTeachers];
     }
     public String getName() {
@@ -26,7 +25,7 @@ public class School {
         this.director = director;
     }
     public Student[] getStudents() {
-        return students;
+        return student;
     }
     public void startStudy(){
         director.startLesson();
