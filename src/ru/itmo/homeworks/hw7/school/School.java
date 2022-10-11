@@ -28,34 +28,18 @@ public class School {
         return student;
     }
     public void startStudy() {
-        director.startLesson();
-        for (Teacher teacher: teachers) {
-            if (teacher == null);
+        director.startLessons();
+        for (Teacher teacher : teachers) {
+            if (teacher == null) ;
             continue;
-            if (student == null);
-            continue;
-            if (teacher.getLessonName().equals(student.getLessonName)) {
-                teacher.teach(student);
+            for (Student student : student) {
+                if (student == null) ;
+                continue;
+                if (teacher.getLessonName().equals(student.getLessonName)) {
+                    teacher.teach(student);
+                }
+                director.finishLesson();
             }
         }
-        director.finishLesson();
-    }
-
-    public void addTeacher(Teacher teacher1) {
-    }
-
-    public void addStudent(Student student) {
-    }
-
-    public void setMaxStudents(int maxStudents) {
-        this.maxStudents = maxStudents;
-    }
-
-    public void setMaxTeachers(int maxTeachers) {
-        this.maxTeachers = maxTeachers;
-    }
-
-    public int getMaxStudents() {
-        return maxStudents;
     }
 }
