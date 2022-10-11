@@ -32,7 +32,7 @@ public class School {
         for (Teacher teacher: teachers) {
             if (teacher == null);
             continue;
-            for (student == null);
+            if (student == null);
             continue;
             if (teacher.getLessonName().equals(student.getLessonName)) {
                 teacher.teach(student);
