@@ -27,7 +27,7 @@ public class School {
     public Student[] getStudents() {
         return student;
     }
-    public void startStudy(){
+    public void startStudy() {
         director.startLesson();
         for (Teacher teacher: teachers) {
             if (teacher == null);
