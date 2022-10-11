@@ -8,6 +8,7 @@ public class Product {
     private double calories;
 
     public Product(String productName) {
+
         setProductName(productName);
     }
     public Product(String productName, double proteins) {
@@ -20,12 +21,12 @@ public class Product {
         setFats(fats);
         setCarbs(carbs);
     }
-    public Product(String productName, double proteins, double fats, double carbs, double callories) {
+    public Product(String productName, double proteins, double fats, double carbs, double calories) {
         setProductName(productName);
         setProteins(proteins);
         setFats(fats);
         setCarbs(carbs);
-        setCalories(callories);
+        setCalories(calories);
     }
     public String getProductName() {
         return productName;
