@@ -3,6 +3,7 @@ package ru.itmo.homeworks.hw7.school;
 import ru.itmo.homeworks.hw7.school.fam.Subject;
 
 public class Director extends Subject {
+
     public Director(String name, int age) {
         super(name, age);
     }

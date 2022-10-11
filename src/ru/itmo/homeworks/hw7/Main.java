@@ -5,7 +5,6 @@ import ru.itmo.homeworks.hw7.school.School;
 import ru.itmo.homeworks.hw7.school.Director;
 import ru.itmo.homeworks.hw7.school.Teacher;
 
-
 public class Main {
 
     public static String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
