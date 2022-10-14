@@ -17,9 +17,6 @@ public class School {
         student = new Student[maxStudents];
         teachers = new Teacher[maxTeachers];
     }
-    public String getName() {
-        return this.name;
-    }
     public Director getDirector() {
         return this.director;
     }
@@ -44,10 +41,8 @@ public class School {
         director.startLesson();
         for (Teacher teacher : teachers) {
             if (teacher == null) ;
-            continue;
             for (Student student : student) {
                 if (student == null) ;
-                continue;
                 if (teacher.getLessonName().equals(student.getLessonName)) {
                     teacher.teach(student);
                 }

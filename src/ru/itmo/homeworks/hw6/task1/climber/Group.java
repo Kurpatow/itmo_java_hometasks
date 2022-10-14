@@ -34,4 +34,7 @@ public class Group {
         }
         if (numberOfAlpinists == maxAlpinists) isOpen = false;
     }
+
+    public void addAplinist(Alpinist robert) {
+    }
 }

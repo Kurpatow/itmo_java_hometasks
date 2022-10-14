@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Director director = new Director("Татьяна Николаевна", 45);
-        School school = new School("Школа 495", 2, 8, 4);
+        School school = new School("Школа 495", director, 8, 4);
         Teacher teacher1 = new Teacher("Наталья Игоревна", 39, "Алгебра", 90);
         Teacher teacher2 = new Teacher("Ирина Юрьевна", 44, "Геометрия", 88);
         Teacher teacher3 = new Teacher("Михаил Васильевич", 34, "Физика", 86);
