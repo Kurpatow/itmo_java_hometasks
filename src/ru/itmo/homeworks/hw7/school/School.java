@@ -2,7 +2,7 @@ package ru.itmo.homeworks.hw7.school;
 
 public class School {
     public String name;
-    public int director;
+    public Director director;
     public Teacher[] teachers;
     public Student[] student;
 
@@ -10,7 +10,7 @@ public class School {
     }
     public void addStudent() {
     }
-    public School(String name, int director, int maxStudents, int maxTeachers) {
+    public School(String name, Director director, int maxStudents, int maxTeachers) {
         setDirector(director);
         setMaxStudents(maxStudents);
         setMaxTeachers(maxTeachers);
@@ -20,14 +20,14 @@ public class School {
     public String getName() {
         return this.name;
     }
-    public int getDirector() {
+    public Director getDirector() {
         return this.director;
     }
     public void setMaxTeachers(int maxTeachers) {
     }
     public void setMaxStudents(int maxStudents) {
     }
-    public void setDirector(int director) {
+    public void setDirector(Director director) {
         this.director = director;
     }
     public Student[] getStudents() {
