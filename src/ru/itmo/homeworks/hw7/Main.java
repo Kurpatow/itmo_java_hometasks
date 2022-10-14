@@ -5,6 +5,8 @@ import ru.itmo.homeworks.hw7.school.School;
 import ru.itmo.homeworks.hw7.school.Director;
 import ru.itmo.homeworks.hw7.school.Teacher;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
@@ -27,7 +29,7 @@ public class Main {
                     Main.classes[(int) (Math.random() * 2)], (int) (Math.random() * 30));
             school.addStudent();
         }
-        System.out.println(school.getStudents());
+        System.out.println(Arrays.toString(school.getStudents()));
         school.startStudy();
     }
 }
