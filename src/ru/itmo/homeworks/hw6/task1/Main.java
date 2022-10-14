@@ -23,20 +23,20 @@ public class Main {
         Group groupCugshpitce = new Group(cugshpitce);
 
         System.out.println("Перва группа: ");
-        groupBeluha.addAplinist(elena);
-        groupBeluha.addAplinist(ekaterina);
-        groupBeluha.addAplinist(kristina);
-        groupBeluha.addAplinist(max);
+        groupBeluha.addAlpinist(elena);
+        groupBeluha.addAlpinist(ekaterina);
+        groupBeluha.addAlpinist(kristina);
+        groupBeluha.addAlpinist(max);
 
         System.out.println("Вторая группа: ");
-        groupKazbek.addAplinist(mihail);
-        groupKazbek.addAplinist(dmitry);
-        groupKazbek.addAplinist(robert);
+        groupKazbek.addAlpinist(mihail);
+        groupKazbek.addAlpinist(dmitry);
+        groupKazbek.addAlpinist(robert);
         groupKazbek.isOpen();
 
         System.out.println("Третья группа: ");
-        groupCugshpitce.addAplinist(elena);
-        groupCugshpitce.addAplinist(kristina);
+        groupCugshpitce.addAlpinist(elena);
+        groupCugshpitce.addAlpinist(kristina);
         groupCugshpitce.isOpen();
     }
 }
