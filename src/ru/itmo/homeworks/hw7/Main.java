@@ -17,15 +17,15 @@ public class Main {
         Teacher teacher3 = new Teacher("Виктор Васильевич", 34, "Физика", 86);
         Teacher teacher4 = new Teacher("Иван Викторович", 32, "История", 99);
 
-        school.addTeacher(teacher1);
-        school.addTeacher(teacher2);
-        school.addTeacher(teacher3);
-        school.addTeacher(teacher4);
+        school.addTeacher();
+        school.addTeacher();
+        school.addTeacher();
+        school.addTeacher();
 
         for (int i = 0; i < 10; i++) {
             Student student = new Student(String.format("Ученик %d",i+1), (int) (6 + (Math.random() * 7)),
                     Main.classes[(int) (Math.random() * 2)], (int) (Math.random() * 30));
-            school.addStudent(student);
+            school.addStudent();
         }
         System.out.println(school.getStudents());
         school.startStudy();

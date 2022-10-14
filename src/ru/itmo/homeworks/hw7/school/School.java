@@ -3,16 +3,13 @@ package ru.itmo.homeworks.hw7.school;
 public class School {
     public String name;
     public int director;
-    private int maxTeachers, maxStudents;
-    private int numTeachers = 0, numStudents = 0;
     public Teacher[] teachers;
     public Student[] student;
 
-    public void addTeacher(Teacher teacher) {
+    public void addTeacher() {
     }
-    public void addStudent(Student student) {
+    public void addStudent() {
     }
-
     public School(String name, int director, int maxStudents, int maxTeachers) {
         setDirector(director);
         setMaxStudents(maxStudents);
@@ -27,10 +24,8 @@ public class School {
         return this.director;
     }
     public void setMaxTeachers(int maxTeachers) {
-        this.maxTeachers = maxTeachers;
     }
     public void setMaxStudents(int maxStudents) {
-        this.maxStudents = maxStudents;
     }
     public void setDirector(int director) {
         this.director = director;
@@ -38,9 +33,15 @@ public class School {
     public Student[] getStudents() {
         return student;
     }
+    public int getNumTeachers() {
+        return 0;
+    }
+    public int getNumStudents() {
+        return 0;
+    }
 
     public void startStudy() {
-        director.startLessons();
+        director.startLesson();
         for (Teacher teacher : teachers) {
             if (teacher == null) ;
             continue;
