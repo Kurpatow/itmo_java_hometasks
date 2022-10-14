@@ -7,7 +7,7 @@ public class Director extends Subject {
     public Director(String name, int age) {
         super(name, age);
     }
-    public void startLessons(){
+    public void startLessons() {
         System.out.println(String.format("Директор %s обьявил начало уроков", this.getName()));
     }
     public void finishLesson() {
