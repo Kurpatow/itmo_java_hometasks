@@ -1,7 +1,5 @@
 package ru.itmo.homeworks.hw7.school;
 
-import ru.itmo.homeworks.hw7.school.fam.Partaker;
-
 public class School {
     public String name;
     public int director;
@@ -9,6 +7,11 @@ public class School {
     private int numTeachers = 0, numStudents = 0;
     public Teacher[] teachers;
     public Student[] student;
+
+    public void addTeacher(Teacher teacher) {
+    }
+    public void addStudent(Student student) {
+    }
 
     public School(String name, int director, int maxStudents, int maxTeachers) {
         setDirector(director);
@@ -29,8 +32,6 @@ public class School {
     public void setMaxStudents(int maxStudents) {
         this.maxStudents = maxStudents;
     }
-
-
     public void setDirector(int director) {
         this.director = director;
     }
