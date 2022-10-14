@@ -59,7 +59,7 @@ public class Cat {
             initMouses();
             return lostMousesArray;
         }
-        public void attackAnotherCat(ru.itmo.homeworks.hw6.task3.Cat cat) {  //Аттакуем другого кота
+        public void attackAnotherCat(Cat cat) {  //Аттакуем другого кота
             if(weight > cat.getWeight()) {
                 System.out.println(getName() + " отобрал у " + cat.getName() + " всех мышей");
                 Mouse1[] anotherCatMouses = cat.lostMouses();
