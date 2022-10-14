@@ -21,6 +21,13 @@ public class School {
     public int getDirector() {
         return this.director;
     }
+    public void setMaxTeachers(int maxTeachers) {
+        this.maxTeachers = maxTeachers;
+    }
+    public void setMaxStudents(int maxStudents) {
+        this.maxStudents = maxStudents;
+    }
+
     public void setDirector(int director) {
         this.director = director;
     }

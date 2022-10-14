@@ -24,7 +24,7 @@ public class Group {
             System.out.println("Набор в группу закрыт \n");
         return isOpen;
     }
-    public void addAplinist(Alpinist alpinist) {
+    public void addAlpinist(Alpinist alpinist) {
         if (isOpen) {
             alpinists[numberOfAlpinists] = alpinist;
             System.out.println("Альпинист " + alpinist.getName() + " добавлен в группу");

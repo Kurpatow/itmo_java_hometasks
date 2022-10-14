@@ -12,7 +12,7 @@ public class Alpinist {
         return name;
     }
     private void setName(String name) {
-        if (name.length() < 3) throw new IllegalArgumentException("В имени альпиниста должно быть минимум 3 буквы");
+        if (name == null || name.length() < 3) throw new IllegalArgumentException("В имени альпиниста должно быть минимум 3 буквы");
         this.name = name;
     }
     public String getAddress() {
