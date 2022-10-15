@@ -4,7 +4,7 @@ import ru.itmo.homeworks.hw7.school.fam.Partaker;
 
 public class Teacher extends Partaker {
 
-    private int teacherInfo;
+    private final int teacherInfo;
 
     public Teacher(String name, int age, String lessonName, int teacherInfo) {
         super(name, age, lessonName);

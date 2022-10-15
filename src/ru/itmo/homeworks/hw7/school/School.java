@@ -5,8 +5,8 @@ public class School {
     private Director director;
     private int maxTeachers, maxStudents;
     private int numTeachers = 0, numStudents = 0;
-    private Teacher[] teachers;
-    private Student[] students;
+    private final Teacher[] teachers;
+    private final Student[] students;
 
     public School(String name, Director director, int maxStudents, int maxTeachers) {
         if (name.length() < 1) throw new IllegalArgumentException("Наименование школы должно содержать минимум один символ");
@@ -17,10 +17,6 @@ public class School {
         teachers = new Teacher[maxTeachers];
         students = new Student[maxStudents];
     }
-    public String getName() { return this.name; }
-
-    public Director getDirector() { return this.director; }
-
     public void setDirector(Director director) {
         this.director = director;
     }

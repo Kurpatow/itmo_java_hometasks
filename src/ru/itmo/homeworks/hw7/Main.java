@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
+    private static final String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
 
     public static void main(String[] args) {
         Director director = new Director("Татьяна Николаевна", 45);
