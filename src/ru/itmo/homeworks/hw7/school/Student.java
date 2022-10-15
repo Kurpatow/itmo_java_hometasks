@@ -9,6 +9,9 @@ public class Student extends Partaker {
         super(name, age, lessonName);
         if (lore < 0) throw new IllegalArgumentException("lore должен быть больше нуля");
         this.lore = lore;
+        this.name = name;
+        this.age = age;
+        this.lessonName = lessonName;
     }
     public int getLore() {
         return lore;

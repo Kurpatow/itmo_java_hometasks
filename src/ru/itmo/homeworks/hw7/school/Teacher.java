@@ -10,6 +10,9 @@ public class Teacher extends Partaker {
         super(name, age, lessonName);
         if (teacherInfo < 0) throw new IllegalArgumentException("teacherInfo должен быть больше нуля");
         this.teacherInfo = teacherInfo;
+        this.name = name;
+        this.age = age;
+        this.lessonName = lessonName;
     }
 
     public void teach (Student student){
