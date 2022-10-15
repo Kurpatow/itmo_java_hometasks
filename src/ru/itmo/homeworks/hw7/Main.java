@@ -29,9 +29,9 @@ public class Main {
         for (int i = 0; i < 9; i++) {
             Student student = new Student(
                     String.format("Ученик %d", i + 1),
-                    (int) (7 + (Math.random() * 9)),
+                    (int) (5 + (Math.random() * 7)),
                     Main.classes[(int) (Math.random() * 3)],
-                    (int) (Math.random() * 40));
+                    (int) (Math.random() * 30));
             school.addStudent(student);
         }
         System.out.println(Arrays.asList(school.getStudents()));
