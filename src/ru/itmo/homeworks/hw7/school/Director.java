@@ -6,12 +6,11 @@ public class Director extends Subject {
 
     public Director(String name, int age) {
         super(name, age);
-        this.name = name;
     }
     public void startLesson() {
-        System.out.printf("Директор %s обьявила начало уроков%n", this.getName());
+        System.out.printf("\n" + "Директор %s обьявила начало уроков!", this.getName());
     }
     public void finishLesson() {
-    System.out.printf("Директор обьявила об окончании уроков%n", this.getName());
+    System.out.printf("\n" + "Директор обьявила об окончании уроков!", this.getName());
     }
 }

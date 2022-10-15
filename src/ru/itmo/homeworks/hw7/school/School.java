@@ -9,15 +9,18 @@ public class School {
     public Student[] students;
 
     public School(String name, Director director, int maxStudents, int maxTeachers) {
+        if (name.length() < 1) throw new IllegalArgumentException("Наименование школы должно содержать минимум один символ");
         this.name = name;
         setDirector(director);
-        setMaxStudents(maxStudents);
         setMaxTeachers(maxTeachers);
-        students = new Student[maxStudents];
+        setMaxStudents(maxStudents);
         teachers = new Teacher[maxTeachers];
+        students = new Student[maxStudents];
     }
     public String getName() { return this.name; }
+
     public Director getDirector() { return this.director; }
+
     public void setDirector(Director director) {
         this.director = director;
     }
@@ -33,17 +36,6 @@ public class School {
 
     public Student[] getStudents() {return students;}
 
-    public void addStudent(Student student) {
-        if (numStudents < maxStudents) {
-            students[numStudents] = student;
-            System.out.printf
-                    ("Ученик %s принят в школу %s%n", student.getName(), this.name);
-            numStudents++;
-        } else {
-            System.out.printf
-                    ("Ученик %s не принят в школу %s. В школе нет мест%n", student.getName(), this.name);
-        }
-    }
     public void addTeacher(Teacher teacher) {
         if (numTeachers < maxTeachers) {
             teachers[numTeachers] = teacher;
@@ -53,6 +45,17 @@ public class School {
         } else {
             System.out.printf
                     ("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
+        }
+    }
+    public void addStudent(Student student) {
+        if (numStudents < maxStudents) {
+            students[numStudents] = student;
+            System.out.printf
+                    ("Ученик %s принят в школу %s%n", student.getName(), this.name);
+            numStudents++;
+        } else {
+            System.out.printf
+                    ("Ученик %s не принят в школу %s. В школе нет мест%n", student.getName(), this.name);
         }
     }
     public void startStudy() {

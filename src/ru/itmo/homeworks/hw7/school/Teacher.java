@@ -11,7 +11,6 @@ public class Teacher extends Partaker {
         if (teacherInfo < 0) throw new IllegalArgumentException("teacherInfo должен быть больше нуля");
         this.teacherInfo = teacherInfo;
         this.name = name;
-        this.age = age;
         this.lessonName = lessonName;
     }
 
@@ -22,9 +21,9 @@ public class Teacher extends Partaker {
                     student.getName(),
                     this.getLessonName());
 
-            System.out.printf("Знания до урока - %d%n", student.getLore());
+            System.out.printf("Знания до урока - %d ", student.getLore());
             student.toStudy(this.teacherInfo);
-            System.out.printf("Знания после урока - %d%n", student.getLore());
+            System.out.printf("Знания после урока - %d ", student.getLore());
         }
     }
 }

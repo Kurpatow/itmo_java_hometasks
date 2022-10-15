@@ -27,11 +27,14 @@ public class Main {
         school.addTeacher(teacher4);
 
         for (int i = 0; i < 9; i++) {
-            Student student = new Student(String.format("Ученик %d", i + 1), (int) (2 + (Math.random() * 3)),
-                    Main.classes[(int) (Math.random() * 2)], (int) (Math.random() * 5));
+            Student student = new Student(
+                    String.format("Ученик %d", i + 1),
+                    (int) (7 + (Math.random() * 9)),
+                    Main.classes[(int) (Math.random() * 3)],
+                    (int) (Math.random() * 40));
             school.addStudent(student);
         }
-        System.out.println(Arrays.toString(school.getStudents()));
+        System.out.println(Arrays.asList(school.getStudents()));
         school.startStudy();
     }
 }
