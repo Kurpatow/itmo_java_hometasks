@@ -6,8 +6,10 @@ public class Teacher extends Partaker {
 
     public int teacherInfo;
 
-    public Teacher (String name, int age, String lessonName, int teacherInfo) {
+    public Teacher(String name, int age, String lessonName, int teacherInfo) {
         super(name, age, lessonName);
+        if (teacherInfo < 0) throw new IllegalArgumentException("teacherInfo должен быть больше нуля");
+        this.teacherInfo = teacherInfo;
     }
 
     public void teach (Student student){

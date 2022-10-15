@@ -1,27 +1,26 @@
 package ru.itmo.homeworks.hw7.school;
 
 public class School {
-    public String name;
+    private final String name;
     public Director director;
-    public Teacher[] teachers;
-    public Student[] students;
     public int maxTeachers, maxStudents;
     public int numTeachers = 0, numStudents = 0;
+    public Teacher[] teachers;
+    public Student[] students;
 
     public School(String name, Director director, int maxStudents, int maxTeachers) {
+        this.name = name;
         setDirector(director);
         setMaxStudents(maxStudents);
         setMaxTeachers(maxTeachers);
         students = new Student[maxStudents];
         teachers = new Teacher[maxTeachers];
+
     }
-    public void setMaxTeachers(int maxTeachers) {
-        if (maxTeachers < 1) throw new IllegalArgumentException("Ошибка! В школе должен быть минимум один учитель");
-        this.numTeachers = numTeachers;
+    public String getName() {
+        return this.name;
     }
-    public void setMaxStudents(int maxStudents) {
-        if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
-    }
+
     public Director getDirector() {
         return this.director;
     }
@@ -29,6 +28,14 @@ public class School {
         this.director = director;
     }
 
+    public void setMaxTeachers(int maxTeachers) {
+        if (maxTeachers < 1) throw new IllegalArgumentException("Ошибка! В школе должен быть минимум один учитель");
+        this.numTeachers = numTeachers;
+    }
+    public void setMaxStudents(int maxStudents) {
+        if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
+        this.numStudents = numStudents;
+    }
     public Student[] getStudents() {
         return students;
     }
