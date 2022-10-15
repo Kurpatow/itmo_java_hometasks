@@ -2,7 +2,7 @@ package ru.itmo.homeworks.hw7.school.fam;
 
 public class Partaker extends Subject {
 
-    protected String lessonName;
+    private String lessonName;
 
     public Partaker (String name, int age, String lessonName) {
         super(name, age);

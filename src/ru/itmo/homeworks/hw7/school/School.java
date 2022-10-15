@@ -2,11 +2,11 @@ package ru.itmo.homeworks.hw7.school;
 
 public class School {
     private final String name;
-    public Director director;
-    public int maxTeachers, maxStudents;
-    public int numTeachers = 0, numStudents = 0;
-    public Teacher[] teachers;
-    public Student[] students;
+    private Director director;
+    private int maxTeachers, maxStudents;
+    private int numTeachers = 0, numStudents = 0;
+    private Teacher[] teachers;
+    private Student[] students;
 
     public School(String name, Director director, int maxStudents, int maxTeachers) {
         if (name.length() < 1) throw new IllegalArgumentException("Наименование школы должно содержать минимум один символ");
@@ -40,22 +40,22 @@ public class School {
         if (numTeachers < maxTeachers) {
             teachers[numTeachers] = teacher;
             System.out.printf
-                    ("Учитель %s принят на работу в школу %s%n", teacher.getName(), this.name);
+                    ("\n" + "Учитель %s принят на работу в школу %s" + "\n", teacher.getName(), this.name);
             numTeachers ++;
         } else {
             System.out.printf
-                    ("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
+                    ("\n" + "Учитель %s НЕ принят на работу в школу -  %s. Причина: В школе нет мест" + "\n", teacher.getName(), this.name);
         }
     }
     public void addStudent(Student student) {
         if (numStudents < maxStudents) {
             students[numStudents] = student;
             System.out.printf
-                    ("Ученик %s принят в школу %s%n", student.getName(), this.name);
+                    ("\n" + "Ученик %s принят в школу %s" + "\n" , student.getName(), this.name);
             numStudents++;
         } else {
             System.out.printf
-                    ("Ученик %s не принят в школу %s. В школе нет мест%n", student.getName(), this.name);
+                    ("\n" + "Ученик %s НЕ принят в школу -  %s. Причина: В школе нет мест" + "\n", student.getName(), this.name);
         }
     }
     public void startStudy() {
@@ -64,7 +64,7 @@ public class School {
             if (teacher == null) break;
                 for (Student student : students) {
                     if (student == null) break;
-                    if (teacher.getLessonName().equals(student.getLessonName)) {
+                    if (teacher.getLessonName().equals(student.getLessonName())) {
                         teacher.teach(student);
                     }
                 }

@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
+    private static String[] classes = {"Алгебра", "Геометрия", "Физика", "История"};
 
     public static void main(String[] args) {
         Director director = new Director("Татьяна Николаевна", 45);
@@ -34,7 +34,7 @@ public class Main {
                     (int) (Math.random() * 30));
             school.addStudent(student);
         }
-        System.out.println(Arrays.asList(school.getStudents()));
+        System.out.println(Arrays.toString(school.getStudents()));
         school.startStudy();
     }
 }
