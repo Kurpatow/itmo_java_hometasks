@@ -30,25 +30,14 @@ public class School {
 
     public void setMaxTeachers(int maxTeachers) {
         if (maxTeachers < 1) throw new IllegalArgumentException("Ошибка! В школе должен быть минимум один учитель");
-        this.numTeachers = numTeachers;
+        this.maxTeachers = maxTeachers;
     }
     public void setMaxStudents(int maxStudents) {
         if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
-        this.numStudents = numStudents;
+        this.maxStudents = maxStudents;
     }
     public Student[] getStudents() {
         return students;
-    }
-
-    public void addTeacher(Teacher teacher) {
-        if (numTeachers < maxTeachers) {
-            teachers[numTeachers] = teacher;
-            System.out.printf
-                    ("Учитель %s принят на работу в школу %s%n", teacher.getName(), this.name);
-            numTeachers ++;
-        } else {
-            System.out.printf("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
-        }
     }
     public void addStudent(Student student) {
         if (numStudents < maxStudents) {
@@ -62,6 +51,17 @@ public class School {
         }
     }
 
+    public void addTeacher(Teacher teacher) {
+        if (numTeachers < maxTeachers) {
+            teachers[numTeachers] = teacher;
+            System.out.printf
+                    ("Учитель %s принят на работу в школу %s%n", teacher.getName(), this.name);
+            numTeachers ++;
+        } else {
+            System.out.printf("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
+        }
+    }
+
     public void startStudy() {
         director.startLesson();
         for (Teacher teacher : teachers) {
@@ -71,8 +71,8 @@ public class School {
                     if (teacher.getLessonName().equals(student.getLessonName)) {
                         teacher.teach(student);
                     }
-                    director.finishLesson();
                 }
         }
+        director.finishLesson();
     }
 }

@@ -26,9 +26,9 @@ public class Main {
         school.addTeacher(teacher3);
         school.addTeacher(teacher4);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 9; i++) {
             Student student = new Student(String.format("Ученик %d", i + 1), (int) (2 + (Math.random() * 3)),
-                    Main.classes[(int) (Math.random() * 2)], (int) (Math.random() * 10));
+                    Main.classes[(int) (Math.random() * 2)], (int) (Math.random() * 5));
             school.addStudent(student);
         }
         System.out.println(Arrays.toString(school.getStudents()));

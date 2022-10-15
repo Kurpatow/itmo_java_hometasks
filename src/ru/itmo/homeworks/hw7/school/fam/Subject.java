@@ -5,6 +5,7 @@ public class Subject {
     public int age;
     public Subject(String name, int age) {
         if (age < 0) throw new ArithmeticException("Возраст не может быть меньше нуля");
+        this.name = name;
     }
     public String getName() {
         return this.name;
