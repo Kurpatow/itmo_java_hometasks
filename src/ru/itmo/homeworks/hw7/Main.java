@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         Director director = new Director("Татьяна Николаевна", 45);
 
-        School school = new School("Школа 495", director, 8, 4);
+        School school = new School("Школа 495", director, 10, 4);
         
         Teacher teacher1 = new Teacher("Наталья Игоревна", 39, "Алгебра", 90);
         Teacher teacher2 = new Teacher("Ирина Юрьевна", 44, "Геометрия", 88);
@@ -26,7 +26,7 @@ public class Main {
         school.addTeacher(teacher3);
         school.addTeacher(teacher4);
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 11; i++) {
             Student student = new Student(
                     String.format("Ученик %d", i + 1),
                     (int) (5 + (Math.random() * 7)),
