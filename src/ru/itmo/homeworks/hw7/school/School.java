@@ -15,15 +15,9 @@ public class School {
         setMaxTeachers(maxTeachers);
         students = new Student[maxStudents];
         teachers = new Teacher[maxTeachers];
-
     }
-    public String getName() {
-        return this.name;
-    }
-
-    public Director getDirector() {
-        return this.director;
-    }
+    public String getName() {return this.name;}
+    public Director getDirector() {return this.director;}
     public void setDirector(Director director) {
         this.director = director;
     }
@@ -36,9 +30,9 @@ public class School {
         if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
         this.maxStudents = maxStudents;
     }
-    public Student[] getStudents() {
-        return students;
-    }
+
+    public Student[] getStudents() {return students;}
+
     public void addStudent(Student student) {
         if (numStudents < maxStudents) {
             students[numStudents] = student;
@@ -50,7 +44,6 @@ public class School {
                     ("Ученик %s не принят в школу %s. В школе нет мест%n", student.getName(), this.name);
         }
     }
-
     public void addTeacher(Teacher teacher) {
         if (numTeachers < maxTeachers) {
             teachers[numTeachers] = teacher;
@@ -61,7 +54,6 @@ public class School {
             System.out.printf("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
         }
     }
-
     public void startStudy() {
         director.startLesson();
         for (Teacher teacher : teachers) {
