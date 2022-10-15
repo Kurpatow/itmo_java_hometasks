@@ -30,9 +30,11 @@ public class School {
 
     public void setMaxTeachers(int maxTeachers) {
         if (maxTeachers < 1) throw new IllegalArgumentException("Ошибка! В школе должен быть минимум один учитель");
+        this.numTeachers = numTeachers;
     }
     public void setMaxStudents(int maxStudents) {
         if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
+        this.numStudents = numStudents;
     }
     public Student[] getStudents() {
         return students;
