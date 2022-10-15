@@ -39,6 +39,8 @@ public enum SolarSystemPlanets {
 
     @Override
     public String toString() {
-        return '\n' + "Название - " + name + '\n' + " Масса планеты - " + weight + '\n' + " Радиус планеты - " + radius;
+        return '\n' + "Название планеты - " + name
+                + '\n' + " Масса планеты - " + weight
+                + '\n' + " Радиус планеты - " + radius;
     }
 }
