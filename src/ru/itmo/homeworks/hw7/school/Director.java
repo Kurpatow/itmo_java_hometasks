@@ -10,9 +10,9 @@ public class Director extends Subject {
         this.age = age;
     }
     public void startLesson() {
-        System.out.println(String.format("Директор %s обьявил начало уроков", this.getName()));
+        System.out.println(String.format("Директор %s обьявила начало уроков", this.getName()));
     }
     public void finishLesson() {
-    System.out.println(String.format("Директор обьявил об окончании уроков", this.getName()));
+    System.out.println(String.format("Директор обьявила об окончании уроков", this.getName()));
     }
 }

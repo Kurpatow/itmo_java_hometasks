@@ -17,14 +17,14 @@ public class Teacher extends Partaker {
 
     public void teach (Student student){
         if (student.getLessonName().equals(this.getLessonName())) {
-            System.out.println(String.format("Учитель %s обучет ученика %s. Название урока - %s",
+            System.out.printf("Учитель %s обучет ученика %s. Название урока - %s%n",
                     this.getName(),
                     student.getName(),
-                    this.getLessonName()));
+                    this.getLessonName());
 
-            System.out.println(String.format("Знания до урока - %d" , student.getLore()));
+            System.out.printf("Знания до урока - %d%n", student.getLore());
             student.toStudy(this.teacherInfo);
-            System.out.println(String.format("Знания после урока - %d", student.getLore()));
+            System.out.printf("Знания после урока - %d%n", student.getLore());
         }
     }
 }

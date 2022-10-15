@@ -30,11 +30,9 @@ public class School {
 
     public void setMaxTeachers(int maxTeachers) {
         if (maxTeachers < 1) throw new IllegalArgumentException("Ошибка! В школе должен быть минимум один учитель");
-        this.numTeachers = numTeachers;
     }
     public void setMaxStudents(int maxStudents) {
         if (maxStudents < 1) throw  new IllegalArgumentException("Ошибка! В школе должен быть мимнум один ученик");
-        this.numStudents = numStudents;
     }
     public Student[] getStudents() {
         return students;
@@ -43,23 +41,22 @@ public class School {
     public void addTeacher(Teacher teacher) {
         if (numTeachers < maxTeachers) {
             teachers[numTeachers] = teacher;
-            System.out.println
-                    (String.format("Учитель %s принят на работу в школу %s", teacher.getName(), this.name));
-            numTeachers++;
+            System.out.printf
+                    ("Учитель %s принят на работу в школу %s%n", teacher.getName(), this.name);
+            numTeachers ++;
         } else {
-            System.out.println(
-                    String.format("Учитель %s не принят на работу в школу %s. В школе нет мест", teacher.getName(), this.name));
+            System.out.printf("Учитель %s не принят на работу в школу %s. В школе нет мест%n", teacher.getName(), this.name);
         }
     }
     public void addStudent(Student student) {
         if (numStudents < maxStudents) {
             students[numStudents] = student;
-            System.out.println
-                    (String.format("Ученик %s принят в школу %s", student.getName(), this.name));
+            System.out.printf
+                    ("Ученик %s принят в школу %s%n", student.getName(), this.name);
             numStudents++;
         } else {
-            System.out.println
-                    (String.format("Ученик %s не принят в школу %s. В школе нет мест", student.getName(), this.name));
+            System.out.printf
+                    ("Ученик %s не принят в школу %s. В школе нет мест%n", student.getName(), this.name);
         }
     }
 
