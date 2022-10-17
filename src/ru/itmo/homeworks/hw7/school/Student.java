@@ -15,7 +15,7 @@ public class Student extends Partaker {
         return lore;
     }
 
-    public void toStudy(int teacherInfo) {
+    public void toString(int teacherInfo) {
         lore += (int) (Math.random() * teacherInfo);
     }
 }
