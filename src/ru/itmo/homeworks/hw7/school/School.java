@@ -47,11 +47,11 @@ public class School {
         if (numStudents < maxStudents) {
             students[numStudents] = student;
             System.out.printf
-                    ("\n" + "Ученик %s принят в школу %s" + "\n" , student.getName(), this.name);
+                    ('\n' + "Ученик %s принят в школу %s" + '\n' , student.getName(), this.name);
             numStudents++;
         } else {
             System.out.printf
-                    ("\n" + "Ученик %s НЕ принят в школу -  %s. Причина: В школе нет мест" + "\n", student.getName(), this.name);
+                    ('\n' + "Ученик %s НЕ принят в школу -  %s. Причина: В школе нет мест" + '\n', student.getName(), this.name);
         }
     }
     public void startStudy() {

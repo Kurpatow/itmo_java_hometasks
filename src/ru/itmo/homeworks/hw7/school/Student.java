@@ -6,6 +6,7 @@ public class Student extends Partaker {
 
     private int lore;
 
+
     public Student(String name, int age, String lessonName, int lore) {
         super(name, age, lessonName);
         if (lore < 0) throw new IllegalArgumentException("lore должен быть больше нуля");
@@ -15,7 +16,10 @@ public class Student extends Partaker {
         return lore;
     }
 
-    public void toString(int teacherInfo) {
-        lore += (int) (Math.random() * teacherInfo);
+    public void toStudy(int teacherSkill) {
+        lore += (int) (Math.random() * teacherSkill);
+    }
+    public String toString() {
+        return "Имя: " + getName() + " , " + " Знания: " + getLore() + '\n';
     }
 }

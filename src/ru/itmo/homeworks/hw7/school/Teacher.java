@@ -19,9 +19,9 @@ public class Teacher extends Partaker {
                     student.getName(),
                     this.getLessonName());
 
-            System.out.printf("\n" + "Знания до урока - %d " + "\n", student.getLore());
-            student.toString(this.teacherInfo);
-            System.out.printf("\n" + "Знания после урока - %d " + "\n", student.getLore());
+            System.out.printf('\n' + "Знания до урока - %d " + '\n', student.getLore());
+            student.toStudy(this.teacherInfo);
+            System.out.printf('\n' + "Знания после урока - %d " + '\n', student.getLore());
         }
     }
 }

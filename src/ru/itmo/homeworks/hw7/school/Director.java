@@ -9,10 +9,10 @@ public class Director extends Subject {
     }
     public void startLesson() {
         System.out.printf
-                ("\n" + "Директор %s обьявила начало уроков!", this.getName());
+                ('\n' + "Директор %s обьявила начало уроков!", this.getName());
     }
     public void finishLesson() {
         System.out.printf
-                ("\n" + "Директор %s обьявила об окончании уроков!", this.getName());
+                ('\n' + "Директор %s обьявила об окончании уроков!", this.getName());
     }
 }
