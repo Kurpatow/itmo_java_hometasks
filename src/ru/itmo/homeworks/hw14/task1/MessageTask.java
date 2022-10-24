@@ -1,5 +1,4 @@
 package ru.itmo.homeworks.hw14.task1;
-
 import java.util.List;
 
 public class MessageTask {
@@ -14,6 +13,7 @@ public class MessageTask {
     }
 
     public static void uniqueMessageCount(List<Message> messageList) {
+
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
     }
