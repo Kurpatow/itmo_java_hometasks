@@ -6,6 +6,7 @@ public class MessageTask {
     public static void countEachPriority(List<Message> messageList) {
         // TODO:  Подсчитать количество сообщений для каждого приоритета
         //  Ответ в консоль
+        System.out.println('\n');
         int count;
         System.out.println("Количество сообщений для каждого приоритета");
         for (MessagePriority md : MessagePriority.values()){
@@ -17,6 +18,7 @@ public class MessageTask {
             }
             System.out.println("Приоритет: " + md + " Колличество сообщений: " + count);
         }
+        System.out.println('\n');
     }
 
     public static void countEachCode(List<Message> messageList) {
@@ -37,12 +39,16 @@ public class MessageTask {
             }
             System.out.println("Код сообщения: " + code + " Колличество сообщений: " + count);
         }
+        System.out.println('\n');
     }
 
     public static void uniqueMessageCount(List<Message> messageList) {
-
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
+        System.out.println("Колличетсво уникальных сообщений");
+        HashSet<Message> messageSet = new HashSet<>(messageList);
+        System.out.println(messageSet.size());
+        System.out.println('\n');
     }
 
     public static List<Message> uniqueMessagesInOriginalOrder(List<Message> messageList) {
@@ -65,6 +71,12 @@ public class MessageTask {
 
     public static void main(String[] args) {
         List<Message> messages = Message.generate(34);
-        System.out.println();
+        System.out.println(messages);
+        MessageTask.countEachPriority(messages);
+        MessageTask.countEachCode(messages);
+        MessageTask.uniqueMessageCount(messages);
+        System.out.println(MessageTask.uniqueMessagesInOriginalOrder(messages));
+        MessageTask.removeEach(messages, MessagePriority.HIGH);
+        MessageTask.removeOther(messages, MessagePriority.LOW);
     }
 }
