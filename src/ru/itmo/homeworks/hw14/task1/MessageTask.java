@@ -1,6 +1,5 @@
 package ru.itmo.homeworks.hw14.task1;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class MessageTask {
     public static void countEachPriority(List<Message> messageList) {
@@ -56,12 +55,21 @@ public class MessageTask {
         //  в котором они встретились в первоначальном списке
         //  Например, было: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}, {HIGH, 9}]
         //  на выходе: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}]
-        return null;
+        System.out.println('\n');
+        System.out.println("Неповторяющиеся сообщения в порядке, в котором они встретились в первоначальном списке");
+        LinkedHashSet<Message> linkedHashSet = new LinkedHashSet<>(messageList);
+        LinkedList<Message> linkedList = new LinkedList<>(linkedHashSet);
+        return linkedList;
     }
 
     public static void removeEach(List<Message> messageList, MessagePriority priority) {
         // TODO: удалить из коллекции каждое сообщение с заданным приоритетом
         //  вывод в консоль до удаления и после удаления
+        System.out.println('\n');
+        System.out.println("Удалить из коллекции каждое сообщение с заданным приоритетом");
+        System.out.println("Коллекция до удаления сообщения с приоритетом: " + priority);
+// не закончил
+
     }
 
     public static void removeOther(List<Message> messageList, MessagePriority priority) {
