@@ -1,4 +1,6 @@
 package ru.itmo.homeworks.hw14.task1;
+import ru.itmo.homeworks.hw11.SolarSystemPlanets;
+
 import java.util.*;
 
 public class MessageTask {
@@ -68,13 +70,32 @@ public class MessageTask {
         System.out.println('\n');
         System.out.println("Удалить из коллекции каждое сообщение с заданным приоритетом");
         System.out.println("Коллекция до удаления сообщения с приоритетом: " + priority);
-// не закончил
-
+        System.out.println(messageList);
+        Iterator<Message> iterator = messageList.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getPriority().equals(priority)) {
+                iterator.remove();
+            }
+        }
+        System.out.println("Коллекция после удаления сообщения с приоритетом: " + priority);
+        System.out.println(messageList);
     }
 
     public static void removeOther(List<Message> messageList, MessagePriority priority) {
         // TODO: удалить из коллекции все сообщения, кроме тех, которые имеют заданный приоритет
         //  вывод в консоль до удаления и после удаления
+        System.out.println('\n');
+        System.out.println("Удалить из коллекции каждое сообщение с заданным приоритетом");
+        System.out.println("Коллекция до удаления сообщения с приоритетом: " + priority);
+        System.out.println(messageList);
+        Iterator<Message> iterator = messageList.iterator();
+        while (iterator.hasNext()) {
+            if (!iterator.next().getPriority().equals(priority)) {
+                iterator.remove();
+            }
+        }
+        System.out.println("Коллекция после удаления сообщения с приоритетом: " + priority);
+        System.out.println(messageList);
     }
 
     public static void main(String[] args) {
