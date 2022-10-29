@@ -51,10 +51,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Сотрудники [ " + "Имя: " + name + ", " +
+        return "Сотрудник [ " + "Имя: " + name + ", " +
                 "Компания: " + company + ", " +
                 "Зарплата: " + salary + ", " +
-                "Возраст: " + age + "." + " ]";
+                "Возраст: " + age + "." + " ]" + '\n';
     }
 
     // TODO: дописать реализацию метода для создания списка из объектов класса Employee.
