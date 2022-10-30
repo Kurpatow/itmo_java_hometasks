@@ -20,6 +20,35 @@ public class MapTask {
     // TODO:: дан список слов (words).
     //  Написать статический метод, который будет возвращать количество одинаковых слов
     //  в мапе вида Map<String, Integer>, где String - слово и Integer - количество повторений
+    public static HashMap<String, Integer> getCountDuplicates(List<String> words) {
+        HashMap<String, Integer> countDuplicates = new HashMap<>();
+
+        for (String word : words) {
+            if (countDuplicates.containsKey(word)) {
+                countDuplicates.put(String.valueOf(word), countDuplicates.get(word) + 1);
+            }else {
+                countDuplicates.put(String.valueOf(word), 1);
+            }
+        }
+        return countDuplicates;
+    }
+
+    // Задача №3
+    // TODO:: дана мапа (customerMap).
+    //  Написать статический метод, который принимает на вход аргументы int from и int to и возвращает
+    //  новую мапу, в которую войдут все покупатели, возраст которых находится в диапазоне [from, to)
+    public static HashMap<String, Customer> getCustomerAge(HashMap<String, Customer> customerMap, int ageFrom, int ageTo) {
+        HashMap<String, Customer> customers = new HashMap<>();
+
+        for (Map.Entry<String, Customer> couple : customerMap.entrySet()) {
+            int customerAge = couple.getValue().getAge();
+            if (customerAge >= ageFrom && customerAge <= ageTo) {
+                customers.put(couple.getKey(), couple.getValue());
+            }
+        }
+        return customers;
+    }
+
 
 
     public static void main(String[] args) {
@@ -35,6 +64,7 @@ public class MapTask {
 
         System.out.println("===== Задание №1 - Логины которые соответствуют городу =====");
         System.out.println(cityLogin(firstTaskMap, city));
+        System.out.println('\n');
 
 
         // Задача № 2
@@ -49,18 +79,21 @@ public class MapTask {
         words.add("august");
         words.add("august");
 
+        System.out.println("===== Задание №2 - Метод возвращает одинаковые слова и количество повторений =====");
+        System.out.println(getCountDuplicates(words));
+        System.out.println('\n');
 
 
-
-        // TODO:: дана мапа (customerMap).
-        //  Написать статический метод, который принимает на вход аргументы int from и int to и возвращает
-        //  новую мапу, в которую войдут все покупатели, возраст которых находится в диапазоне [from, to)
-
+        // Задача №3
         HashMap<String, Customer> customerMap = new HashMap<>();
         customerMap.put("1", new Customer("Павел", "1", 23));
         customerMap.put("2", new Customer("Олег", "2", 17));
         customerMap.put("3", new Customer("Максим", "3", 48));
         customerMap.put("4", new Customer("Евгения", "4", 67));
+
+        System.out.println("===== Задание №3 - Возвращаем новую мапу =====");
+        System.out.println(getCustomerAge(customerMap, 23, 50));
+        System.out.println('\n');
 
 
         // TODO:: Задания по тексту (text). На каждый пункт - минимум один метод (можно статический):
