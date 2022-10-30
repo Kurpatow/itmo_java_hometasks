@@ -1,5 +1,10 @@
 package ru.itmo.homeworks.hw17;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class AdditionalTask {
     public static void main(String[] args) {
 
@@ -14,6 +19,7 @@ public class AdditionalTask {
         //      String - слово
         //      Long - частота встречаемости
         //  В мапу должны войти только первые 10 по частоте встречаемости слов.
+
 
 
     }
