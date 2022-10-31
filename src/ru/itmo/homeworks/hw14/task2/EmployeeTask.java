@@ -7,7 +7,7 @@ import ru.itmo.homeworks.hw14.task2.comparator.NameComparator;
 import ru.itmo.homeworks.hw14.task2.comparator.SalaryComparator;
 
 import java.util.Comparator;
-import java.util.List;
+
 
 
 public class EmployeeTask {

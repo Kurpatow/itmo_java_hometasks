@@ -1,5 +1,4 @@
 package ru.itmo.homeworks.hw14.task1;
-import ru.itmo.homeworks.hw11.SolarSystemPlanets;
 
 import java.util.*;
 
@@ -46,7 +45,7 @@ public class MessageTask {
     public static void uniqueMessageCount(List<Message> messageList) {
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
-        System.out.println("Колличетсво уникальных сообщений");
+        System.out.println("Количество уникальных сообщений");
         HashSet<Message> messageSet = new HashSet<>(messageList);
         System.out.println(messageSet.size());
         System.out.println('\n');
