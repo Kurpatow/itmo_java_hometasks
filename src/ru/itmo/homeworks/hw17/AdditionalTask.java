@@ -1,6 +1,9 @@
 package ru.itmo.homeworks.hw17;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -20,7 +23,16 @@ public class AdditionalTask {
         //      Long - частота встречаемости
         //  В мапу должны войти только первые 10 по частоте встречаемости слов.
 
+        Map<String, Long> map = Arrays.stream(text.split(" "))
+                .parallel()
+                .map(word -> word.toLowerCase().trim()) // собираем в map: слово - колличество
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet() // получаем EntrySet
+                .stream()   // снова создаем stream
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
+                .limit(10) // берем 10 значений
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)); // собираем мапу
 
-
+        System.out.println(map);
     }
 }

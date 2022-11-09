@@ -29,6 +29,24 @@ public class TransactionsTask {
         //      Long - сумма транзакций (sum) по данному аккаунту
         //  2. найти сумму транзакций по всем аккаунтам
 
+        //Задание №1
+        Map<String, Long> map = transactionStream
+                .collect(Collectors.toMap(
+                        transaction -> transaction.getAccount().getNumber(),
+                        // Function<? super T, ? extends U> valueMapper -> R apply(T t)
+                        transaction -> transaction.getSum(), // Transaction::getSum,
+                        (item1, item2) -> item1 + item2
+                ));
 
+        System.out.println(map);
+
+        //Задание №2
+        transactionStream = Stream.of(transaction1, transaction2, transaction3,
+                transaction4, transaction5, transaction6, transaction7);
+        long transactionsSum = transactionStream
+                .mapToLong(transaction -> transaction.getAccount().getBalance())
+                .sum();
+
+        System.out.println(transactionsSum);
     }
 }

@@ -48,7 +48,49 @@ public class MapTask {
         }
         return customers;
     }
+    //Задача №4
+    // TODO:: Задания по тексту (text). На каждый пункт - минимум один метод (можно статический):
+    //  1. написать метод, принимающий на вход слово и возвращающий частоту встречаемости данного слова в тексте
+    //  (Map<String, Long>, где - ключи (String) - слово, значения (Long) - частота встречаемости)
+    //  2. написать метод, который собирает все слова в группы по количеству букв:
+    //  например, в одну группу попадут слова: 3 - [the, war, jar, get, met...], в другую 2 - [on, up, no, of...]
+    //  (Map<Integer, ArrayList<String>>, где - ключи (Integer) - количество букв, значения (ArrayList<String>) - слова)
+    //  3. написать метод, который выводит в консоль топ 10 самых часто встречаемых в тексте слов (артикли и предлоги тоже считаем за слова)
 
+    public static int getWordCount(String text, String word) {
+        int count = 0;
+        String[] textByWords = text.split(" ");
+
+        for (String textByWord : textByWords) {
+            if (textByWord.equalsIgnoreCase(word)) count++;
+        }
+        return count;
+    }
+
+    public static HashMap<Integer, ArrayList<String>> getTextStatistic(String text) {
+        HashMap<Integer, ArrayList<String>> textStatistic = new HashMap<>();
+        for (String word : text.split(" ")) {
+            ArrayList<String> strings = textStatistic.getOrDefault(word.length(), new ArrayList<String>());
+            strings.add(word);
+            textStatistic.put(word.length(), strings);
+        }
+        return textStatistic;
+    }
+
+    public static void printTopTenWordsFromText(String text) {
+        String[] words = text.trim().toLowerCase().split(" ");
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        for (String word: words) {
+            hashMap.put(word, hashMap.getOrDefault(word, 0) + 1);
+        }
+
+        ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<>(hashMap.entrySet());
+        entries.sort(new ComparatorValue());
+        for (int i = 0; i < 10; i++) {
+            System.out.println(entries.get(i).getKey());
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -96,14 +138,7 @@ public class MapTask {
         System.out.println('\n');
 
 
-        // TODO:: Задания по тексту (text). На каждый пункт - минимум один метод (можно статический):
-        //  1. написать метод, принимающий на вход слово и возвращающий частоту встречаемости данного слова в тексте
-        //  (Map<String, Long>, где - ключи (String) - слово, значения (Long) - частота встречаемости)
-        //  2. написать метод, который собирает все слова в группы по количеству букв:
-        //  например, в одну группу попадут слова: 3 - [the, war, jar, get, met...], в другую 2 - [on, up, no, of...]
-        //  (Map<Integer, ArrayList<String>>, где - ключи (Integer) - количество букв, значения (ArrayList<String>) - слова)
-        //  3. написать метод, который выводит в консоль топ 10 самых часто встречаемых в тексте слов (артикли и предлоги тоже считаем за слова)
-
+        //Задача №4
         // в тексте содержатся только буквы и пробельные символы
         String text = "It is a uncover long established fact that a reader will be distracted uncover by the readable content of a page " +
                 "when looking at its layout The point of using uncover Lorem Ipsum is that sites it has a more-or-less normal distribution of letters" +
@@ -111,6 +146,8 @@ public class MapTask {
                 "packages and web page editors now use Lorem Ipsum as their default model text and a search for lorem ipsum will " +
                 "uncover many web sites still uncover in their infancy Various versions uncover have evolved over the years uncover sometimes by accident" +
                 " sometimes on purpose injected humour and the like";
-
+        System.out.println(getWordCount(text, "It")); // 3
+        System.out.println(getTextStatistic(text));
+        printTopTenWordsFromText(text);
     }
 }
