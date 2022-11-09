@@ -33,8 +33,7 @@ public class TransactionsTask {
         Map<String, Long> map = transactionStream
                 .collect(Collectors.toMap(
                         transaction -> transaction.getAccount().getNumber(),
-                        // Function<? super T, ? extends U> valueMapper -> R apply(T t)
-                        transaction -> transaction.getSum(), // Transaction::getSum,
+                        transaction -> transaction.getSum(),
                         (item1, item2) -> item1 + item2
                 ));
 
