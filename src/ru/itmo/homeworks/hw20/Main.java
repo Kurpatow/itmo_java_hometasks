@@ -2,16 +2,13 @@ package ru.itmo.homeworks.hw20;
 
 import ru.itmo.homeworks.hw20.units.Infantry;
 import ru.itmo.homeworks.hw20.units.King;
-import ru.itmo.homeworks.hw20.units.Knight;
-import ru.itmo.homeworks.hw20.base.BattleUnit;
-
 
 public class Main {
     public void finalArgs(final int a, final Infantry infantry){
         System.out.println(a);
         int b = a * a;
 
-        System.out.println(infantry.getHealthScore());
+        System.out.println(infantry.getHealthPoint());
         infantry.plusHealth(10);
     }
 

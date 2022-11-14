@@ -8,12 +8,15 @@ public class King extends Unit {
 
     private int gold = AppSetting.GOLD;
     private BattleUnit[] army;
-    public King (int healthScore) {
+
+    public King(int healthScore) {
         super(healthScore);
     }
+
     public int getGold() {
         return gold;
     }
+
     //Создаём армию
     public void createArmy() {
         if (gold < AppSetting.ARMY_PRICE) {
@@ -22,6 +25,7 @@ public class King extends Unit {
         gold -= AppSetting.ARMY_PRICE;
         army = BattleUnit.getBattleUnits(AppSetting.UNITS_COUNT);
     }
+
     public void armyRenewal() {
         for (int i = 0; i < army.length; i++) {
             if (gold < AppSetting.UNIT_PRICE) {
@@ -33,16 +37,42 @@ public class King extends Unit {
             }
         }
     }
-    public void startBattle(King enemy){
+    @Override
+    public void rest() {
+        if (gold < AppSetting.REST_PRICE) return;
+        gold -= AppSetting.REST_PRICE;
+        super.rest();
+        System.out.println("King восстанавливает силы");
+    }
+    // final метод нельзя переопределить в дочернем классе
+    public final void rest(Unit unit) {
+        if (gold < AppSetting.REST_PRICE * 2) return;
+        gold -= AppSetting.REST_PRICE * 2;
+        plusHealth(2);
+        unit.plusHealth(1);
+        System.out.println("King и Unit восстанавливают силы");
+    }
+    @Override
+    public boolean equals(Object obj) {
+        King anotherKing;
+
+        if (obj instanceof King) anotherKing = (King) obj;
+        else return false;
+
+        return this.gold == anotherKing.getGold() &&
+                this.army.length == anotherKing.army.length &&
+                this.healthPoint == anotherKing.getHealthPoint();
+    }
+
+    public boolean startBattle(King enemy) {
         // TODO:: текущий король нападает на другого короля. Реализовать сражение армий
         int thisKingDeathUnitsCounter = 0, enemyDeathUnitsCounter = 0;
         int thisKingArmyNumberOfUnits = this.army.length;
         int enemyKingArmyNumberOfUnits = enemy.army.length;
+        System.out.println("Начало сражения");
 
-        System.out.println("Начало сражения армий королей!");
-
-        for (BattleUnit thisKingUnit: this.army) {
-            for (BattleUnit enemyUnit: enemy.army) {
+        for (BattleUnit thisKingUnit : this.army) {
+            for (BattleUnit enemyUnit : enemy.army) {
                 while (thisKingUnit.isAlive() && enemyUnit.isAlive()) {
                     thisKingUnit.attack(enemyUnit);
                     if (!enemyUnit.isAlive()) {
@@ -69,46 +99,20 @@ public class King extends Unit {
                         break;
                     }
                 }
-                if (!thisKingUnit.isAlive()) break; // Если умер юнит нападавшего короля, в бой должен вступить следующий
+                if (!thisKingUnit.isAlive())
+                    break; // Если юнит нападающего короля погибает, то в бой идет следующий юнит
+                if (thisKingArmyNumberOfUnits == thisKingDeathUnitsCounter) {
+                    System.out.println("Победил защищающийся король");
+                    break;
+                }
+                if (enemyKingArmyNumberOfUnits == enemyDeathUnitsCounter) {
+                    System.out.println("Победил нападающий король");
+                    break;
+                }
             }
-            if (thisKingArmyNumberOfUnits == thisKingDeathUnitsCounter) {
-                System.out.println("Победил защищающийся король");
-                break;
-            }
-            if (enemyKingArmyNumberOfUnits == enemyDeathUnitsCounter) {
-                System.out.println("Победил нападающий король");
-                break;
-            }
+            System.out.println("Армия нападающего короля = " + thisKingArmyNumberOfUnits + " потери: " + thisKingDeathUnitsCounter);
+            System.out.println("Армия защищающегося короля = " + enemyKingArmyNumberOfUnits + " потери: " + enemyDeathUnitsCounter);
         }
-        System.out.println("Армия нападающего короля = " + thisKingArmyNumberOfUnits + " погибло юнитов = " + thisKingDeathUnitsCounter);
-        System.out.println("Армия защищающегося короля = " + enemyKingArmyNumberOfUnits + " погибло юнитов = " + enemyDeathUnitsCounter);
-    }
-
-    @Override
-    public void rest(){
-        if (gold < AppSetting.REST_PRICE) return;
-        gold -= AppSetting.REST_PRICE;
-        super.rest();
-        System.out.println("King восстанавливает силы");
-    }
-    // final метод нельзя переопределить в дочернем классе
-    public final void rest(Unit unit) {
-        if (gold < AppSetting.REST_PRICE * 2) return;
-        gold -= AppSetting.REST_PRICE * 2;
-        plusHealth(2);
-        unit.plusHealth(1);
-        System.out.println("King и Unit восстанавливают силы");
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        King anotherKing;
-
-        if (obj instanceof King) anotherKing = (King) obj;
-        else return false;
-
-        return this.gold == anotherKing.getGold() &&
-                this.army.length == anotherKing.army.length &&
-                this.healthScore == anotherKing.getHealthScore();
+        return false;
     }
 }

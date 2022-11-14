@@ -4,17 +4,16 @@ import ru.itmo.homeworks.hw20.units.Infantry;
 import ru.itmo.homeworks.hw20.units.Knight;
 
 abstract public class BattleUnit extends Unit {
+    protected int attackPoints;
 
-    protected int attackScore;
-
-    public BattleUnit(int healthScore, int attackScore) {
-        super(healthScore);
-        if (attackScore < 1) {
+    public BattleUnit(int healthPoint, int attackPoints) {
+        super(healthPoint);
+        if (attackPoints < 1) {
             throw new IllegalArgumentException("attackScore должен быть больше единицы");
         }
-        this.attackScore = attackScore;
+        this.attackPoints = attackPoints;
     }
-    public int getAttackScore() {return attackScore;}
+    public int getAttackPoints() {return attackPoints;}
 
     abstract public void attack (BattleUnit enemy);
 

@@ -5,8 +5,8 @@ import ru.itmo.homeworks.hw20.base.BattleUnit;
 public final class Infantry extends BattleUnit {
      private int extraAttack;
 
-      public Infantry(int healthScore, int attackScore, int extraAttack) {
-           super(healthScore, attackScore);
+      public Infantry(int healthPoint, int attackPoints, int extraAttack) {
+           super(healthPoint, attackPoints);
            if (extraAttack < 1) throw new IllegalArgumentException("extra - должно быть больше единицы");
            this.extraAttack = extraAttack;
       }
@@ -17,6 +17,6 @@ public final class Infantry extends BattleUnit {
     @Override
     public void attack(BattleUnit enemy) {
         System.out.println("Infantry attack");
-        enemy.minusHealth(this.attackScore + this.extraAttack);
+        enemy.minusHealth(this.attackPoints + this.extraAttack);
     }
 }
