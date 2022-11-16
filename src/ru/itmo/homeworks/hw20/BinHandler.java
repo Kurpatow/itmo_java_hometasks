@@ -3,13 +3,13 @@ package ru.itmo.homeworks.hw20;
 import java.io.*;
 
 public class BinHandler<T> {
+
     private File file;
 
-    public BinHandler() {
-        setFile();
-    }
+    public BinHandler() {setFile();}
+
     private void setFile() {
-        file = new File("src/ru/itmo/lessons/lesson20/lesson20.bin");
+        file = new File("src/ru/itmo/homeworks/hw20/hw20.bin");
     }
 
     public void writeToFile(T object) {
@@ -21,10 +21,12 @@ public class BinHandler<T> {
             throw new RuntimeException(e);
         }
     }
+
     public T readFromFile() {
         Object result = null;
-        try (FileInputStream fileInput = new FileInputStream(file);
-             ObjectInputStream objectInput = new ObjectInputStream(fileInput)
+
+        try(FileInputStream fileInput = new FileInputStream(file);
+            ObjectInputStream objectInput = new ObjectInputStream(fileInput)
         ) {
             result = objectInput.readObject();
         } catch (IOException | ClassNotFoundException e) {

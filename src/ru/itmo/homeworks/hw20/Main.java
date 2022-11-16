@@ -3,7 +3,9 @@ package ru.itmo.homeworks.hw20;
 import ru.itmo.homeworks.hw20.units.Infantry;
 import ru.itmo.homeworks.hw20.units.King;
 
+
 public class Main {
+
     public void finalArgs(final int a, final Infantry infantry){
         System.out.println(a);
         int b = a * a;
@@ -36,7 +38,7 @@ public class Main {
         kingdom04.loadKingdomFromFile(); // Загружаем в королевство 4 королевство 2 из файла
 
         System.out.println(kingdom03.getKingdomName()); // после загрузки у королевства 3 имя королевства 1
-        System.out.println(kingdom04.getKingdomName()); // после загрузки у королевства 2 имя королевства 4
+        System.out.println(kingdom04.getKingdomName()); // после загрузки у королевства 4 имя королевства 2
 
         // equals переопределен
         System.out.println(kingdom03.getKing().equals(kingdom01.getKing())); // true

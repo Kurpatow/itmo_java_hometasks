@@ -12,10 +12,7 @@ public class Kingdom implements Serializable {
 
     private King king;
 
-    public Kingdom(String kingdomName) {
-        setKingdomName(kingdomName);
-        setKingdomHandler();
-    }
+    public Kingdom(String kingdomName) { setKingdomName(kingdomName); setKingdomHandler();}
 
     private void setKingdomHandler() {
         kingdomHandler = new BinHandler<>();
