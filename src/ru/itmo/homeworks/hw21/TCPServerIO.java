@@ -63,8 +63,13 @@ public class TCPServerIO {
     private String getCountText() {
         return "Количество сообщений, обработанных сервером, равно " + this.messageCounter;
     }
-
     public static void main(String[] args) {
-        new TCPServerIO(TCPPropertiesIO.getTCPPortFromString(args[0])).run();
+        // Integer.parseInt(); -> возвращает int
+        // Integer.valueOf(); -> возвращает Integer
+
+        // что делать, если аргумент не задан, его нельзя преобразовать в int
+        // или число не может быть использовано в качестве значения port?
+
+        new TCPServerIO(Integer.parseInt(args[0])).run();
     }
 }
