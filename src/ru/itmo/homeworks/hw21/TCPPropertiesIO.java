@@ -6,19 +6,13 @@ import java.util.Properties;
 
 public class TCPPropertiesIO {
     private static final String CLIENT_PROPERTIES_PATH = "hw21_config.properties";
-
     private static final int PORT_BY_DEFAULT = 8090;
-
     private static final Properties clientProperties;
-
-    static {
-        clientProperties = setClientProperties();
-    }
+    static {clientProperties = setClientProperties();}
 
     private static Properties setClientProperties() {
 
         Properties properties = new Properties();
-
         try(InputStream input = TCPPropertiesIO.class.getClassLoader()
                 .getResourceAsStream(TCPPropertiesIO.CLIENT_PROPERTIES_PATH)) {
             properties.load(input);
@@ -30,7 +24,7 @@ public class TCPPropertiesIO {
 
     public static String getClientIP() {
         String clientIP = clientProperties.getProperty("ip");
-        if (clientIP == null || clientIP.split("\\.").length != 4) {
+        if (clientIP == null ) {
             throw new IllegalArgumentException("Неверный формат IP клиента в файле " + CLIENT_PROPERTIES_PATH);
         }
         return clientIP;
