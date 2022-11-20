@@ -1,4 +1,4 @@
-package hw4;
+package ru.itmo.homeworks.hw4;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package hw3;
+package ru.itmo.homeworks.hw3;
 
 public class Main {
     public static void main(String[] args) {

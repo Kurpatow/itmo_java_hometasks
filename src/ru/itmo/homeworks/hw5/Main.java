@@ -1,4 +1,4 @@
-package hw5;
+package ru.itmo.homeworks.hw5;
 
 import java.util.Arrays;
 import java.util.Scanner;

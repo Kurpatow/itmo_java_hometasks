@@ -1,4 +1,4 @@
-package hw2;
+package ru.itmo.homeworks.hw2;
 
 public class Main {
     public static void main(String[] args) {
