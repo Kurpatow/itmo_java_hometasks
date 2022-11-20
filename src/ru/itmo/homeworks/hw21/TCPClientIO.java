@@ -22,11 +22,11 @@ public class TCPClientIO {
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите имя");
+        System.out.println("Введите имя: ");
         String name = scanner.nextLine();
 
         while (true) {
-            System.out.println("Введите сообщение");
+            System.out.println("Введите сообщение: ");
             String text = scanner.nextLine();
 
             if ("/exit".equalsIgnoreCase(text)) {
@@ -52,6 +52,7 @@ public class TCPClientIO {
             }
         }
     }
+
 
     private int getPingTime(Message message) {
         return (receiptMessageTime.getNano() - message.getDateTime().getNano()) / 1_000_000;

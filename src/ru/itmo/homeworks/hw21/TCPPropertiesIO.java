@@ -21,7 +21,6 @@ public class TCPPropertiesIO {
         }
         return properties;
     }
-
     public static String getClientIP() {
         String clientIP = clientProperties.getProperty("ip");
         if (clientIP == null ) {
@@ -29,7 +28,6 @@ public class TCPPropertiesIO {
         }
         return clientIP;
     }
-
     public static int getClientPort() {
         return getTCPPortFromString(clientProperties.getProperty("port"));
     }
@@ -43,7 +41,6 @@ public class TCPPropertiesIO {
         }
         return checkTCPPort(clientPort);
     }
-
     private static int checkTCPPort(int port) {
         if (port < 1024 || port > 49151) {
             System.out.println("Ошибочное значение порта. Задано значение по умолчанию = 8090");

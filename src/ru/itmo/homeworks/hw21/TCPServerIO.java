@@ -20,7 +20,6 @@ public class TCPServerIO {
         this.port = port;
         this.messageCounter = 0;
     }
-
     public void run() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Сервер запущен...");
@@ -49,7 +48,6 @@ public class TCPServerIO {
             System.out.println("Обработка IOException или ClassNotFoundException");
         }
     }
-
     private String getHelpText() {
         String text = "\n" +
                 "Команда    /help    - отобразить справку по командам" + "\n" +
@@ -59,7 +57,6 @@ public class TCPServerIO {
                 "Команда    /exit    - закрыть клиентское приложение";
         return text;
     }
-
     private String getCountText() {
         return "Количество сообщений, обработанных сервером, равно " + this.messageCounter;
     }

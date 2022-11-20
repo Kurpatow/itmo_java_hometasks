@@ -7,7 +7,6 @@ abstract public class Command {
     }
     abstract void action();
 
-
     public static Command getCommand(String str, TCPServerIO server) {
         Command command = null;
         if (str.equals("/help")) {
