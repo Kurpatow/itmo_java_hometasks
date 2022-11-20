@@ -8,12 +8,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TCPServerIO {
-    private final int port;
 
+    private int port;
     private final String sender = "Server";
-
     private String messageText;
-
     private int messageCounter;
 
     public TCPServerIO(int port) {
@@ -30,9 +28,7 @@ public class TCPServerIO {
                 Connection<Message> connection = new Connection<>(socket);
                 Message fromClient = connection.readMessage();
                 System.out.println("От клиента: " + fromClient);
-
                 messageCounter++;
-
                 if ("/help".equalsIgnoreCase(fromClient.getText())) {
                     messageText = getHelpText();
                 } else if ("/count".equalsIgnoreCase(fromClient.getText())) {
@@ -40,7 +36,6 @@ public class TCPServerIO {
                 } else {
                     messageText = "Сообщение от сервера";
                 }
-
                 Message message = new Message(sender, messageText);
                 connection.sendMessage(message);
             }
@@ -57,16 +52,9 @@ public class TCPServerIO {
                 "Команда    /exit    - закрыть клиентское приложение";
         return text;
     }
-    private String getCountText() {
-        return "Количество сообщений, обработанных сервером, равно " + this.messageCounter;
-    }
+    private String getCountText() {return "Количество сообщений, обработанных сервером, равно " + this.messageCounter;}
+
     public static void main(String[] args) {
-        // Integer.parseInt(); -> возвращает int
-        // Integer.valueOf(); -> возвращает Integer
-
-        // что делать, если аргумент не задан, его нельзя преобразовать в int
-        // или число не может быть использовано в качестве значения port?
-
-        new TCPServerIO(Integer.parseInt(args[0])).run();
+        new TCPServerIO(TCPPropertiesIO.getTCPPortFromString(args[0])).run();
     }
 }

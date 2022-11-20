@@ -12,29 +12,17 @@ public class Message implements Serializable {
         this.sender = sender;
         this.text = text;
     }
+    public String getSender() {return sender;}
 
-    public String getSender() {
-        return sender;
-    }
+    public void setSender(String sender) {this.sender = sender;}
 
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
+    public String getText() {return text;}
 
-    public String getText() {
-        return text;
-    }
+    public void setText(String text) {this.text = text;}
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setDateTime() {
-        dateTime = LocalDateTime.now();
-    }
+    public void setDateTime() {dateTime = LocalDateTime.now();}
 
     public LocalDateTime getDateTime() {return dateTime;}
-
 
     @Override
     public String toString() {

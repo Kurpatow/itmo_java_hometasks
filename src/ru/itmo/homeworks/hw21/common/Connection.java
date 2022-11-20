@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class Connection <T extends Message> implements AutoCloseable{
-    private Socket socket; // олицетворяет соединение между клиентом и сервером
+    private Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
 
@@ -15,16 +15,12 @@ public class Connection <T extends Message> implements AutoCloseable{
         output = new ObjectOutputStream(this.socket.getOutputStream());
         input = new ObjectInputStream(this.socket.getInputStream());
     }
-
     public void sendMessage(T message) throws IOException{
         message.setDateTime();
         output.writeObject(message);
-        output.flush(); // принудительно выталкиваем данные. Иначе данные застрянут
+        output.flush();
     }
-
-    public T readMessage() throws IOException, ClassNotFoundException{
-        return (T) input.readObject();
-    }
+    public T readMessage() throws IOException, ClassNotFoundException {return (T) input.readObject();}
 
     @Override
     public void close() throws Exception {

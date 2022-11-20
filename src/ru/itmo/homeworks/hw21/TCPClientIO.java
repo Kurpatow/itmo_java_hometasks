@@ -18,7 +18,6 @@ public class TCPClientIO {
         this.ip = ip;
         this.port = port;
     }
-
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -28,14 +27,11 @@ public class TCPClientIO {
         while (true) {
             System.out.println("Введите сообщение: ");
             String text = scanner.nextLine();
-
             if ("/exit".equalsIgnoreCase(text)) {
-                System.out.println("Закрытие приложения");
+                System.out.println("Закрытие приложения.");
                 return;
             }
-
             Message message = new Message(name, text);
-
             try (Connection<Message> connection = new Connection<>(new Socket(ip, port))) {
                 connection.sendMessage(message);
                 Message fromServer = connection.readMessage();
@@ -46,17 +42,12 @@ public class TCPClientIO {
             } catch (Exception e) {
                 System.out.println("Обработка Exception");
             }
-
             if ("/ping".equalsIgnoreCase(text)) {
                 System.out.println("Время обмена сообщениями с сервером: " + getPingTime(message) + " мс");
             }
         }
     }
-
-
-    private int getPingTime(Message message) {
-        return (receiptMessageTime.getNano() - message.getDateTime().getNano()) / 1_000_000;
-    }
+    private int getPingTime(Message message) {return (receiptMessageTime.getNano() - message.getDateTime().getNano()) / 1000000;}
 
     public static void main(String[] args) {
         new TCPClientIO(TCPPropertiesIO.getClientIP(), TCPPropertiesIO.getClientPort()).run();
