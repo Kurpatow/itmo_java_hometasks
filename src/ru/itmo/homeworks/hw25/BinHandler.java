@@ -8,7 +8,6 @@ import java.io.ObjectOutputStream;
 public class BinHandler<T> {
 
     private File file;
-
     public BinHandler() {setFile();}
 
     private void setFile() {

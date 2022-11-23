@@ -18,9 +18,9 @@ public class MinWordToFile implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
-    private String getMinListWord(CopyOnWriteArrayList<String> list) {
-        return list.stream().min((w1,w2) -> (w1.length() - w2.length())).get();
-    }
+   // private String getMinListWord(CopyOnWriteArrayList<String> list) {
+       // return list.stream().min((w1.length() - w2.length())).get();
+   // }
     private void writeWordToFile(String word) {
         list.remove(word);
     }
