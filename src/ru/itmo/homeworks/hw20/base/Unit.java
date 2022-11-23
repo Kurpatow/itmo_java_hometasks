@@ -13,9 +13,7 @@ abstract public class Unit implements Serializable {
         this.maxHealthScore = healthScore;
     }
 
-    public boolean isAlive(){
-        return healthPoint > 0;
-    }
+    public boolean isAlive(){return healthPoint > 0;}
 
     public void plusHealth(int healthScore) {
         if (isAlive()) return;
@@ -24,9 +22,8 @@ abstract public class Unit implements Serializable {
     public void minusHealth(int healthPoint) {
         if (isAlive()) this.healthPoint -= healthPoint;
     }
-    public int getHealthPoint(){
-        return healthPoint;
-    }
+    public int getHealthPoint(){return healthPoint;}
+
     public void rest() {
         plusHealth(1);
         System.out.println("Unit восстанавливает силы");

@@ -8,7 +8,7 @@ public final class Infantry extends BattleUnit {
 
     public Infantry(int healthScope, int attackScore, int additionalAttack){
         super(healthScope, attackScore);
-        if (additionalAttack < 1) throw new IllegalArgumentException("additionalAttack д.б. больше 1");
+        if (additionalAttack < 1) throw new IllegalArgumentException("additionalAttack должна быть больше единицы");
         this.additionalAttack = additionalAttack;
     }
 

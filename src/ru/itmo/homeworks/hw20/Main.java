@@ -22,14 +22,14 @@ public class Main {
         king02.createArmy();
 
         // Создаем два королевства для двух королей
-        Kingdom kingdom01 = new Kingdom("Королевство 1");
+        Kingdom kingdom01 = new Kingdom("Королевство 1.");
         kingdom01.setKing(king01);
-        Kingdom kingdom02 = new Kingdom("Королевство 2");
+        Kingdom kingdom02 = new Kingdom("Королевство 2.");
         kingdom02.setKing(king02);
 
         // Создаем ещё 2 королевства и загружаем в них королевства из файла
-        Kingdom kingdom03 = new Kingdom("Королевство 3");
-        Kingdom kingdom04 = new Kingdom("Королевство 4");
+        Kingdom kingdom03 = new Kingdom("Королевство 3.");
+        Kingdom kingdom04 = new Kingdom("Королевство 4.");
 
         kingdom01.saveKingdomToFile(); // Сохраняем королевство 1 в файл
         kingdom03.loadKingdomFromFile(); // Загружаем в королевство 3 королевство 1 из файла

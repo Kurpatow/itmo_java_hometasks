@@ -13,7 +13,6 @@ abstract public class BattleUnit extends Unit{
         }
         this.attackScore = attackScore;
     }
-
     abstract public void attack(BattleUnit enemy);
 
     // фабричный метод

@@ -9,7 +9,6 @@ public class Kingdom implements Serializable {
     transient private BinHandler<Kingdom> kingdomHandler;
 
     private String kingdomName;
-
     private King king;
 
     public Kingdom(String kingdomName) { setKingdomName(kingdomName); setKingdomHandler();}
@@ -20,23 +19,16 @@ public class Kingdom implements Serializable {
 
     private void setKingdomName(String kingdomName) {
         if (kingdomName == null || kingdomName.length() < 3) {
-            throw new IllegalArgumentException("В имени королевства д.б. более 3 символов");
+            throw new IllegalArgumentException("В имени королевства должно быть более 3 символов");
         }
         this.kingdomName = kingdomName;
     }
 
-    public String getKingdomName() {
-        return kingdomName;
-    }
+    public String getKingdomName() {return kingdomName;}
 
-    public void setKing(King king) {
-        if (king == null) throw new IllegalArgumentException("Король не д.б. null");
-        this.king = king;
-    }
+    public void setKing(King king) {this.king = king;}
 
-    public King getKing() {
-        return king;
-    }
+    public King getKing() {return king;}
 
     public void saveKingdomToFile() {
         kingdomHandler.writeToFile(this);
@@ -45,7 +37,7 @@ public class Kingdom implements Serializable {
 
     public void loadKingdomFromFile() {
         Kingdom loadKingdom = kingdomHandler.readFromFile();
-        System.out.println("Королевство " + loadKingdom.getKingdomName() + " загружено из файла");
+        System.out.println("Королевство " + loadKingdom.getKingdomName() + " выгружено из файла");
         setKing(loadKingdom.getKing());
         setKingdomName(loadKingdom.getKingdomName());
     }
