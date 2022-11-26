@@ -57,6 +57,6 @@ public class TCPServerIO {
     private String getCountText() {return "Количество сообщений, обработанных сервером, равно " + this.messageCounter;}
 
     public static void main(String[] args) {
-        new TCPServerIO(TCPPropertiesIO.getTCPPortFromString(args[0])).run();
+        new TCPServerIO(TCPPropertiesIO.getServerPort()).run();
     }
 }

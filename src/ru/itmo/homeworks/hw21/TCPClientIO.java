@@ -32,13 +32,14 @@ public class TCPClientIO {
                 return;
             }
             Message message = new Message(name, text, receiptMessageTime );
-            try (Connection<Message> connection = new Connection<>(new Socket(ip, port))) {
+            try (Connection<Message> connection = new Connection<>(new Socket(ip, port)))
+            {
                 connection.sendMessage(message);
                 Message fromServer = connection.readMessage();
                 System.out.println("Сообщение от сервера: " + fromServer);
                 receiptMessageTime = LocalDateTime.now();
             } catch (IOException | ClassNotFoundException e) {
-                System.out.println("Обработка IOException | ClassNotFoundException");
+                System.out.println("Обработка IOException | ClassNotFoundException"); //!!!
             } catch (Exception e) {
                 System.out.println("Обработка Exception");
             }
@@ -47,7 +48,7 @@ public class TCPClientIO {
             }
         }
     }
-    private int getPingTime(Message message) {return (receiptMessageTime.getNano() / 1000000);}
+    private int getPingTime(Message message) {return (receiptMessageTime.getNano() - message.getDateTime().getNano()) / 1000000;}
 
     public static void main(String[] args) {
         new TCPClientIO(TCPPropertiesIO.getClientIP(), TCPPropertiesIO.getClientPort()).run();

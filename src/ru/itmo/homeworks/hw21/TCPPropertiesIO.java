@@ -7,14 +7,27 @@ import java.util.Properties;
 public class TCPPropertiesIO {
 
     private static final String CLIENT_PROPERTIES_PATH = "hw21_config.properties";
+    private static final String SERVER_PROPERTIES_PATH = "hw21_configServer.properties";
 
     private static final int PORT_BY_DEFAULT = 8090;
 
     private static Properties clientProperties;
+    private static Properties serverProperties;
 
     static {clientProperties = setClientProperties(CLIENT_PROPERTIES_PATH);}
+    static {serverProperties = setServerProperties(SERVER_PROPERTIES_PATH);}
 
     private static Properties setClientProperties (String propertiesFilePath) {
+        Properties properties = new Properties();
+        try(InputStream input = TCPPropertiesIO.class.getClassLoader()
+                .getResourceAsStream(propertiesFilePath)) {
+            properties.load(input);
+        } catch (IOException | NullPointerException e) {
+            System.out.println("Проблемы с чтением " + propertiesFilePath);
+        }
+        return properties;
+    }
+    private static Properties setServerProperties (String propertiesFilePath) {
         Properties properties = new Properties();
         try(InputStream input = TCPPropertiesIO.class.getClassLoader()
                 .getResourceAsStream(propertiesFilePath)) {
@@ -33,6 +46,7 @@ public class TCPPropertiesIO {
         return clientIP;
     }
     public static int getClientPort() {return getTCPPortFromString(clientProperties.getProperty("port"));}
+    public static int getServerPort() {return getTCPPortFromString(serverProperties.getProperty("portServer"));}
 
     public static int getTCPPortFromString(String tcpPort) {
         int clientPort = 0;
