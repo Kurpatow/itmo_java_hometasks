@@ -4,7 +4,7 @@ import ru.itmo.homeworks.hw20.base.BattleUnit;
 
 public final class Infantry extends BattleUnit {
 
-    private int additionalAttack;
+    private final int additionalAttack;
 
     public Infantry(int healthScope, int attackScore, int additionalAttack){
         super(healthScope, attackScore);

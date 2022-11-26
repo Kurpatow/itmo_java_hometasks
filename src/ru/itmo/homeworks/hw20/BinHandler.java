@@ -21,7 +21,7 @@ public class BinHandler<T> {
     }
 
     public T readFromFile() {
-        Object result = null;
+        Object result;
 
         try (FileInputStream fileInput = new FileInputStream(file);
             ObjectInputStream objectInput = new ObjectInputStream(fileInput)

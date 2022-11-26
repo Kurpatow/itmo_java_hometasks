@@ -1,17 +1,9 @@
 package ru.itmo.homeworks.hw20;
 
-import ru.itmo.homeworks.hw20.units.Infantry;
 import ru.itmo.homeworks.hw20.units.King;
 
 
 public class Main {
-
-    public void finalArgs(final int a, final Infantry infantry){
-        System.out.println(a);
-        int b = a * a;
-        System.out.println(infantry.getHealthPoint());
-        infantry.plusHealth(10);
-    }
 
     public static void main(String[] args) {
         King king01 = new King(1000);
