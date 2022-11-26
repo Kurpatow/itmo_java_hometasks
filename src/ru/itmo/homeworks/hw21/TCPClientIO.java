@@ -12,7 +12,7 @@ public class TCPClientIO {
     private final String ip;  // адрес серверной машины
     private final int port;   // порт, на котором серверная программа ожидает клиента
 
-    private LocalDateTime receiptMessageTime;
+    private LocalDateTime receiptMessageTime = LocalDateTime.now();
 
     public TCPClientIO(String ip, int port) {
         this.ip = ip;
@@ -31,7 +31,7 @@ public class TCPClientIO {
                 System.out.println("Закрытие приложения.");
                 return;
             }
-            Message message = new Message(name, text);
+            Message message = new Message(name, text, receiptMessageTime );
             try (Connection<Message> connection = new Connection<>(new Socket(ip, port))) {
                 connection.sendMessage(message);
                 Message fromServer = connection.readMessage();
@@ -47,7 +47,7 @@ public class TCPClientIO {
             }
         }
     }
-    private int getPingTime(Message message) {return (receiptMessageTime.getNano() - message.getDateTime().getNano()) / 1000000;}
+    private int getPingTime(Message message) {return (receiptMessageTime.getNano() / 1000000);}
 
     public static void main(String[] args) {
         new TCPClientIO(TCPPropertiesIO.getClientIP(), TCPPropertiesIO.getClientPort()).run();

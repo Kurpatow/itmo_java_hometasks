@@ -8,9 +8,10 @@ public class Message implements Serializable {
     private String text;
     private LocalDateTime dateTime;
 
-    public Message(String sender, String text) {
+    public Message(String sender, String text, LocalDateTime dateTime) {
         this.sender = sender;
         this.text = text;
+        this.dateTime = dateTime;
     }
     public String getSender() {return sender;}
 

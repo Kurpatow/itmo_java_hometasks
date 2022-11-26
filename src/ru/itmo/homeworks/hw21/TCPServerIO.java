@@ -6,6 +6,7 @@ import ru.itmo.homeworks.hw21.common.Connection;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDateTime;
 
 public class TCPServerIO {
 
@@ -13,6 +14,7 @@ public class TCPServerIO {
     private final String sender = "Server";
     private String messageText;
     private int messageCounter;
+    private LocalDateTime dateTime;
 
     public TCPServerIO(int port) {
         this.port = port;
@@ -36,7 +38,7 @@ public class TCPServerIO {
                 } else {
                     messageText = "Сообщение от сервера";
                 }
-                Message message = new Message(sender, messageText);
+                Message message = new Message(sender, messageText, dateTime );
                 connection.sendMessage(message);
             }
         } catch (IOException | ClassNotFoundException e) {
