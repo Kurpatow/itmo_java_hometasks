@@ -1,5 +1,6 @@
 package ru.itmo.homeworks.hw25;
 
+import java.util.Comparator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MinWordToFile implements Runnable {
@@ -18,9 +19,9 @@ public class MinWordToFile implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
-   // private String getMinListWord(CopyOnWriteArrayList<String> list) {
-       // return list.stream().min((w1.length() - w2.length())).get();
-   // }
+   private String getMinListWord(CopyOnWriteArrayList<String> list) {
+        return list.stream().min(Comparator.comparingInt(String::length)).get();
+    }
     private void writeWordToFile(String word) {
         list.remove(word);
     }
