@@ -11,9 +11,9 @@ public class BinHandler<T> {
     public BinHandler() {setFile();}
 
     private void setFile() {
-        file = new File("src/ru/itmo/homeworks/hw25.bin");
+        file = new File("src/ru/itmo/homeworks/hw25/hw25.bin");
     }
-    public void writeToFile(T object) {
+    public void writeToFile(String object) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(file);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
             objectOutputStream.writeObject(object);

@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MinWordToFile implements Runnable {
 
-    BinHandler binHandler;
+    BinHandler<? extends Object> binHandler;
     CopyOnWriteArrayList<String> list;
 
     public MinWordToFile(CopyOnWriteArrayList<String> list) {
@@ -23,7 +23,7 @@ public class MinWordToFile implements Runnable {
         return list.stream().min(Comparator.comparingInt(String::length)).get();
     }
     private void writeWordToFile(String word) {
-        list.remove(word);
+        binHandler.writeToFile(word);
     }
     private void deleteWordFormList(String word) {
         list.remove(word);
@@ -33,14 +33,14 @@ public class MinWordToFile implements Runnable {
     public void run() {
         waitThirtySecond();
         if (!list.isEmpty()) {
-            System.out.println("Коллекция до операций: " + list.toString());
+            System.out.println("Коллекция до операции: " + list);
             String minWord = getMinListWord(list);
             writeWordToFile(minWord);
             deleteWordFormList(minWord);
             System.out.println("Слово: " + minWord + " - записано в файл и удалено из коллекции.");
-            System.out.println("Коллекция после операций: " + list.toString());
+            System.out.println("Коллекция после операции: " + list.toString());
         } else {
-            System.out.println("В листе нет элементов: " + list.toString());
+            System.out.println("В листе нет элементов: " + list);
         }
     }
 }
